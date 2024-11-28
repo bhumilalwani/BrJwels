@@ -17,7 +17,7 @@ const HeroSection = () => {
   <div className="relative z-10 flex flex-col items-start ml-[20%] gap-[10px] justify-center h-full">
   <h4 className='text-xl text-white font-normal'>Who Needs Black Friday, When We've Got Color?</h4>
                             <h1 className='text-[#C48C1F] text-2xl font-semibold'>2024's MOST COLORFUL DEALS</h1>
-                            <div class="timer">Sale Ends In: <div class="countdown" id="countdownTimer">
+                            <div className="timer">Sale Ends In: <div className="countdown" id="countdownTimer">
                                     <span id="hours">00</span>h
                                     <span>:</span>
                                     <span id="minutes">00</span>m
@@ -25,7 +25,7 @@ const HeroSection = () => {
                                     <span id="seconds">00</span>s
                                 </div>
                             </div>
-                            <div class="hero-button border-[1px] border-solid border-white px-[25px] py-[10px]">
+                            <div className="hero-button border-[1px] border-solid border-white px-[25px] py-[10px]">
                                 <Link href="/shop" className='text-white text-2xl font-normal hover:no-underline '>Shop Now</Link>
                             </div>
   </div>

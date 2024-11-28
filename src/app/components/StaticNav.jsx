@@ -6,7 +6,7 @@ const StaticNav = () => {
   return (
   
         <div className='flex items-center justify-between bg-white px-[26px] py-[32px]'>
-        <div className='hidden lg:flex items-center text-'>
+        <div className='hidden lg:flex items-center '>
             <h3 className='text-sm'>24/7 Customer Support | </h3>         
             <Link className='cursor-pointer hover:text-[#CAA968] text-black' href="/contact">+1-844-527-4367</Link>
 
@@ -25,7 +25,7 @@ const StaticNav = () => {
 
         <div className='flex items-center justify-between rounded-md'>
             <div className='flex items-center justify-between gap-[10px] '>
-            <i class="ri-search-line text-xl"></i>
+            <i className="ri-search-line text-xl"></i>
             <input className='outline-none capitalize text-xl font-normal rounded-md p-[10px]' type="text" placeholder='Search...' />
             </div>
         </div>

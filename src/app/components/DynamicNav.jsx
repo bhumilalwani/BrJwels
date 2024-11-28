@@ -6,9 +6,7 @@ const DynamicNav = () => {
   return (
     <div className='flex items-center justify-center w-[100%] h-[20%] '>
       <div className='flex items-center justify-between gap-[5vw]'>
-      <Link
-    href="/rings"
-    className="relative inline-block text-black text-[14px] font-semibold group hover:text-black hover:no-underline"
+      <Link href="/rings" className="relative inline-block text-black text-[14px] font-semibold group hover:text-black hover:no-underline"
   >
    RINGS
     <span
