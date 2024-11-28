@@ -15,8 +15,8 @@ const HeroSection = () => {
 
   {/* <!-- Content Over Video --> */}
   <div className="relative z-10 flex flex-col items-start ml-[20%] gap-[10px] justify-center h-full">
-  <h4 className='text-xl text-white font-normal'>Who Needs Black Friday, When We've Got Color?</h4>
-                            <h1 className='text-[#C48C1F] text-2xl font-semibold'>2024's MOST COLORFUL DEALS</h1>
+  <h4 className='text-xl text-white font-normal'>Who Needs Black Friday, When We&apos;ve Got Color?</h4>
+                            <h1 className='text-[#C48C1F] text-2xl font-semibold'>2024&apos;s MOST COLORFUL DEALS</h1>
                             <div className="timer">Sale Ends In: <div className="countdown" id="countdownTimer">
                                     <span id="hours">00</span>h
                                     <span>:</span>
