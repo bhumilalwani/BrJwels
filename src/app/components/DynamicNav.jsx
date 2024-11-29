@@ -7,7 +7,7 @@ const DynamicNav = () => {
     <div className='flex items-center justify-center w-[100%] h-[20%] group flex-col'>
       <div className=" flex items-center justify-center w-full h-[20%] flex-col">
       {/* Navigation Links */}
-      <div className="flex items-center justify-between gap-[5vw] flex-wrap">
+      <div className="hidden items-center justify-between gap-[4vw] md:whitespace-nowrap lg:flex">
         {['RINGS', 'NECKLACES', 'EARINGS', 'ENGAGEMENT RINGS', 'WEDDING RINGS', 'BRACELETS', 'COLLECTIONS', 'GIFTS', 'BLOG'].map((text, index) => (
           <Link
             key={index}

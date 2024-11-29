@@ -40,7 +40,7 @@ const FooterLastestStrip = () => {
         <img className='w-[40px] h-[30px]' src="https://www.freeiconspng.com/uploads/us-flag-icon-5.png" alt="" />
         <Link className='flex-nowrap text-sm underline mr-[10px]' href='/'>UNITED STATES </Link>
     </div>
-    <div className='flex items-center justify-center sm:gap-[10px] sm:gap-[20px] justify-center'>
+    <div className='flex items-center justify-center gap-[0px] flex-wrap sm:gap-[10px] sm:gap-[20px] justify-center'>
         <Link href='/'>Education</Link>
         <span> | </span>
         <Link href='/'>Site Map</Link>

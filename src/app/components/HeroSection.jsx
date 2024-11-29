@@ -25,8 +25,8 @@ const  HeroSection = () => {
                                     <span id="seconds">00</span>s
                                 </div>
                             </div>
-                            <div className="hero-button border-[1px] border-solid border-white px-[25px] py-[10px]">
-                                <Link href="/shop" className='text-white text-2xl font-normal hover:no-underline '>Shop Now</Link>
+                            <div className="hero-button border-[1px] border-solid border-white px-[25px] py-[10px] hover:bg-white ">
+                                <Link href="/shop" className='text-white text-2xl font-normal hover:no-underline hover:text-black'>Shop Now</Link>
                             </div>
   </div>
 </div>
@@ -51,7 +51,7 @@ const  HeroSection = () => {
             />
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              src="http://127.0.0.1:5500/angara/img/rings-hover.jpg" 
+              src="https://images.designtrends.com/wp-content/uploads/2016/02/16114154/Shiny-Blue-Ring.jpg" 
               alt="Secondary Image of Rings category"
             />
           </div>
@@ -73,7 +73,7 @@ const  HeroSection = () => {
             />
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              src="http://127.0.0.1:5500/angara/img/rings-hover.jpg" 
+              src="https://cdn.fascinatingdiamonds.com/Website+Fancy+Images/2+Carat+Heart+Cut+Diamond+Earring+In+White+Gold-FDEAR10411HT-2.00CT.jpg" 
               alt="Secondary Image of Earrings category"
             />
           </div>
@@ -95,7 +95,7 @@ const  HeroSection = () => {
             />
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              src="http://127.0.0.1:5500/angara/img/rings-hover.jpg"
+              src="https://tse3.mm.bing.net/th?id=OIP.-xPUlSH38m8cOfUeR2MTUgHaHa&pid=Api&P=0&h=180"
               alt="Secondary Image of Necklaces category"
             />
           </div>
@@ -117,7 +117,7 @@ const  HeroSection = () => {
             />
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              src="http://127.0.0.1:5500/angara/img/rings-hover.jpg" 
+              src="https://tse3.mm.bing.net/th?id=OIP.-xPUlSH38m8cOfUeR2MTUgHaHa&pid=Api&P=0&h=180" 
               alt="Secondary Image of Bracelets category"
             />
           </div>
@@ -139,7 +139,7 @@ const  HeroSection = () => {
             />
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              src="http://127.0.0.1:5500/angara/img/rings-hover.jpg" 
+              src="https://tse3.mm.bing.net/th?id=OIP.-xPUlSH38m8cOfUeR2MTUgHaHa&pid=Api&P=0&h=180" 
               alt="Secondary Image of Lab Diamond Jewelry category"
             />
           </div>
@@ -163,7 +163,7 @@ const  HeroSection = () => {
             />
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              src="http://127.0.0.1:5500/angara/img/rings-hover.jpg"
+              src="https://tse3.mm.bing.net/th?id=OIP.-xPUlSH38m8cOfUeR2MTUgHaHa&pid=Api&P=0&h=180"
               alt="Secondary Image of GIA Collection category"
             />
           </div>

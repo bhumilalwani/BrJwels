@@ -40,13 +40,13 @@ const Birthdays = () => {
     <div className="relative w-[70%] mx-auto mt-[6vh] mb-[10vh] overflow-hidden">
       {/* Previous Button */}
       <button
-        className={`absolute top-1/2 left-4 transform -translate-y-1/2 text-3xl text-white z-10 ${
+        className={`absolute top-1/2 left-4 transform -translate-y-3/4 text-3xl z-10 ${
           currentIndex === 0 ? 'opacity-50' : ''
         }`}
         onClick={handlePrev}
         // disabled={currentIndex === 0}
       >
-        <i className="ri-arrow-left-s-line"></i>
+        <i className="ri-arrow-left-s-line text-black text-lg "></i>
       </button>
 
       {/* Swiper Wrapper */}
@@ -65,11 +65,11 @@ const Birthdays = () => {
               style={{ width: `${100 / images.length}%` }}
             >
               <img
-                className="w-[4vw] h-[8vh]"
+                className="w-[30%] h-[45%]"
                 src={image}
                 alt={`Slide ${index + 1}`}
               />
-              <h3 className="text-gray-400 mt-2">January</h3>
+              <h3 className="text-gray-500 mt-2">January</h3>
             </div>
           ))}
         </div>
@@ -77,13 +77,13 @@ const Birthdays = () => {
 
       {/* Next Button */}
       <button
-        className={`absolute top-1/2 right-4 transform -translate-y-1/2 text-3xl text-white z-10 ${
+        className={`absolute top-1/2 right-4 transform -translate-y-3/4 text-3xl z-10 ${
           currentIndex === images.length - 1 ? 'opacity-50 ' : ''
         }`}
         onClick={handleNext}
         // disabled={currentIndex === images.length - 1}
       >
-        <i className="ri-arrow-right-s-line"></i>
+        <i className="ri-arrow-right-s-line text-black text-lg"></i>
       </button>
     </div>
         

@@ -14,13 +14,15 @@ import LastFooter from "./components/LastFooter";
 import FooterLastestStrip from "./components/FooterLastestStrip";
 import ReasonsToShop from "./components/ReasonsToShop";
 import Gifts from "./components/Gifts";
+import CustomerReview from "./components/CustomerReview";
+import Edit from "./components/Edit";
 
 
 
 
 export default function Home() {
   return (
-   <div className=" ">
+   <div className="overflow-x-hidden">
         <StaticNav></StaticNav>
         <DynamicNav></DynamicNav>
         <HeroSection></HeroSection>
@@ -31,7 +33,10 @@ export default function Home() {
         <Collections></Collections>
         <FeaturedIn></FeaturedIn>
         <LeftRightSec></LeftRightSec>
+        {/* keep up with br */}
         <ReasonsToShop></ReasonsToShop>
+        <Edit></Edit>
+        <CustomerReview></CustomerReview>
         <BottomSign></BottomSign>
         <Awards></Awards>
         <LastFooter></LastFooter>
