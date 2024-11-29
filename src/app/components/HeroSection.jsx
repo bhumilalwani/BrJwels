@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const HeroSection = () => {
+const  HeroSection = () => {
   return (
     <div className=''>
       <div className="relative mt-[10px] w-full h-screen overflow-hidden">
@@ -35,7 +35,7 @@ const HeroSection = () => {
 
 <section className="ml-[15%] mt-[5%] w-fit ">
   <div className="container mx-auto">
-    <div className="flex items-center gap-10">
+    <div className="flex items-center gap-10 flex-wrap">
       {/* Rings */}
       <div className="group relative">
         <Link

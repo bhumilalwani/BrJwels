@@ -5,7 +5,7 @@ import React from 'react'
 const StaticNav = () => {
   return (
   
-        <div className='flex items-center justify-between bg-white px-[26px] py-[32px]'>
+        <div className='flex items-center justify-between bg-white px-[26px] flex-wrap py-[32px]'>
         <div className='hidden lg:flex items-center '>
             <h3 className='text-sm'>24/7 Customer Support | </h3>         
             <Link className='cursor-pointer hover:text-[#CAA968] text-black' href="/contact">+1-844-527-4367</Link>
@@ -13,12 +13,12 @@ const StaticNav = () => {
         </div>
         
 
-        <div className='flex lg:hidden items-center justify-center'>
+        {/* <div className='flex lg:hidden items-center justify-center'>
         <i className="ri-menu-2-line text-4xl text-gray-700"></i>
 
-        </div>
+        </div> */}
 
-        <div className='logo ml-[18%]'>
+        <div className='logo -ml-[10px] sm:ml-[18%]'>
             {/* <img src="" alt="" /> */}
             <h1 className='text-2xl font-semibold cursor-pointer'>BR JEW.</h1>
         </div>

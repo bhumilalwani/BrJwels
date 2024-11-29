@@ -12,6 +12,8 @@ import BottomSign from "./components/BottomSign";
 import Awards from "./components/Awards";
 import LastFooter from "./components/LastFooter";
 import FooterLastestStrip from "./components/FooterLastestStrip";
+import ReasonsToShop from "./components/ReasonsToShop";
+import Gifts from "./components/Gifts";
 
 
 
@@ -24,10 +26,12 @@ export default function Home() {
         <HeroSection></HeroSection>
         <HeroSection2></HeroSection2>
         <Birthdays></Birthdays>
+        <Gifts></Gifts>
         <MostLoved></MostLoved>
         <Collections></Collections>
         <FeaturedIn></FeaturedIn>
         <LeftRightSec></LeftRightSec>
+        <ReasonsToShop></ReasonsToShop>
         <BottomSign></BottomSign>
         <Awards></Awards>
         <LastFooter></LastFooter>

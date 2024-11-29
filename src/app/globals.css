@@ -19,3 +19,26 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+.custom-underline {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px; /* Underline thickness */
+    background-color: blue; /* Default color */
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%); /* Ensure it starts from the center */
+  }
+  
+  .custom-underline:hover::after {
+    width: 100%; /* Make the underline fill the whole width */
+    background-color: #D1AF97; /* Change color on hover */
+  }
+  

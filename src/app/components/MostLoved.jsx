@@ -34,7 +34,7 @@ const MostLoved = () => {
     return (
         <div>
             <section className="section-gap py-10 bg-gray-100">
-                <div className="container mx-auto text-center drop-shadow-xl cursor-pointer">
+                <div className="container mx-auto text-center drop-shadow-xl cursor-pointer sm:px-[10vh]">
                     <h2 className="text-2xl font-bold mb-8">Most Loved On BR</h2>
                     <div className="relative ">
                         <div className="flex overflow-hidden">
@@ -47,12 +47,12 @@ const MostLoved = () => {
                                 {birthstones.map((stone, index) => (
                                     <div
                                         key={index}
-                                        className="birthstone-card relative w-fit mx-2 text-center bg-white p-4 rounded-lg shadow-lg"
+                                        className="birthstone-card relative min-w-[305px] w-fit mx-2 text-center bg-white p-4 rounded-lg shadow-lg"
                                     >
                                         <img
                                             src={stone.image}
                                             alt={stone.name}
-                                            className="w-24 h-24 rounded-full mx-auto mb-4"
+                                            className="sm:w-24 sm:h-24 w-20 h-20 rounded-full mx-auto mb-4"
                                         />
                                         <i
                                             onClick={() => LikeHandler(stone.name)}
@@ -71,7 +71,7 @@ const MostLoved = () => {
                         <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
                             <button
                                 onClick={prevSlide}
-                                className="carousel-button bg-gray-800 text-white rounded-full p-2"
+                                className="carousel-button text-gray-800 text-2xl rounded-full p-2"
                             >
                                 &lt;
                             </button>
@@ -79,7 +79,7 @@ const MostLoved = () => {
                         <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
                             <button
                                 onClick={nextSlide}
-                                className="carousel-button bg-gray-800 text-white rounded-full p-2"
+                                className="carousel-button text-gray-800 text-2xl rounded-full p-2"
                             >
                                 &gt;
                             </button>

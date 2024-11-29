@@ -6,12 +6,12 @@ const LeftRightSec = () => {
   return (
     <div className='mt-[10vh]'>
       <div className='flex w-[90%] items-center gap-0'>
-        <div className='w-[60%] flex-col ml-[30px] pr-[10px] pt-[10vh] pl-[20vh] items-center justify-start h-[30vh] bg-[#F5F5F6]'>
+        <div className='w-[60%] flex-col ml-[30px] sm:pr-[10px] sm:pt-[6vh] sm:pb-[5vh] sm:pl-[20vh] items-center justify-start h-fit bg-[#F5F5F6]'>
             <h3 className='mb-[3vh]'>Our 8 Cs Promise</h3>
-            <p>Unlike other e-tailers, we powered a 400-year legacy in gemstones and jewelry-making with cutting-edge technology to make bespoke fine jewelry accessible for the very first time. Without the middlemen, you can count on us to deliver your dream jewelry at high speed, and with 30 percent more value.</p>
+            <p className='min-w-[20vw]'>Unlike other e-tailers, we powered a 400-year legacy in gemstones and jewelry-making with cutting-edge technology to make bespoke fine jewelry accessible for the very first time. Without the middlemen, you can count on us to deliver your dream jewelry at high speed, and with 30 percent more value.</p>
             <div></div>
         </div>
-        <div className='bg-green-700 w-[40%]'>
+        <div className='w-[40%]'>
             <VideoCarousel></VideoCarousel>
         </div>
       </div>
@@ -119,13 +119,13 @@ const VideoCarousel = () => {
       {/* Navigation Buttons */}
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 text-gray-700 p-2 rounded-full"
       >
         &lt;
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 text-gray-700 p-2 rounded-full"
       >
         &gt;
       </button>

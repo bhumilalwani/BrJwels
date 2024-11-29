@@ -88,7 +88,7 @@ const Birthdays = () => {
     </div>
         
         <div className='w-full h-[80%] cursor-pointer'>
-            <img className='w-[100%] h-[100%]' src="http://127.0.0.1:5500/angara/img/banner-2.jpg" alt="" />
+            <img className='w-[100%] h-[100%]' src="https://i.pinimg.com/1200x/c0/2f/6e/c02f6e73c46a6d381439c017f1b31e50.jpg" alt="" />
         </div>
         
     </div>
