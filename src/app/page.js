@@ -4,17 +4,35 @@ import DynamicNav from "./components/DynamicNav";
 import HeroSection from "./components/HeroSection";
 import HeroSection2 from "./components/HeroSection2";
 import Birthdays from "./components/Birthdays";
+import MostLoved from "./components/MostLoved";
+import Collections from "./components/Collections";
+import FeaturedIn from "./components/FeaturedIn";
+import LeftRightSec from "./components/LeftRightSec";
+import BottomSign from "./components/BottomSign";
+import Awards from "./components/Awards";
+import LastFooter from "./components/LastFooter";
+import FooterLastestStrip from "./components/FooterLastestStrip";
+
 
 
 
 export default function Home() {
   return (
-   <div className="">
+   <div className=" ">
         <StaticNav></StaticNav>
         <DynamicNav></DynamicNav>
         <HeroSection></HeroSection>
         <HeroSection2></HeroSection2>
         <Birthdays></Birthdays>
+        <MostLoved></MostLoved>
+        <Collections></Collections>
+        <FeaturedIn></FeaturedIn>
+        <LeftRightSec></LeftRightSec>
+        <BottomSign></BottomSign>
+        <Awards></Awards>
+        <LastFooter></LastFooter>
+        <FooterLastestStrip></FooterLastestStrip>
+
    </div>
   );
 }

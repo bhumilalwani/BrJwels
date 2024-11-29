@@ -33,7 +33,7 @@ const HeroSection = () => {
 
 
 
-<section className="py-8 bg-gray-100">
+<section className="ml-[15%] mt-[5%] w-fit ">
   <div className="container mx-auto">
     <div className="flex items-center gap-10">
       {/* Rings */}
