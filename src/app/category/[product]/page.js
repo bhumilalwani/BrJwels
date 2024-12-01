@@ -294,7 +294,7 @@ const FilterSection = (props) => {
     const [activeCategory, setActiveCategory] = useState(1); // Set the second category as default
   
     return (
-      <div className="flex backdrop-blur-lg flex-row w-[80%] absolute top-[10%] h-screen bg-white shadow-lg">
+      <div className="flex backdrop-blur-lg flex-row w-[80%] absolute top-[10%] h-fit bg-white shadow-lg">
         {/* Categories */}
         <div className="w-[50%] p-4 border-r-[1px] border-gray-300">
           {categories.map((category, index) => (
@@ -313,7 +313,7 @@ const FilterSection = (props) => {
         </div>
   
         {/* Subcategories */}
-        <div className="w-[40%] p-4">
+        <div className="w-[40%] p-4 h-fit">
           {activeCategory !== null && categories[activeCategory].subcategories.length > 0 ? (
             <ul className="space-y-2">
               {categories[activeCategory].subcategories.map((subcategory, index) => (

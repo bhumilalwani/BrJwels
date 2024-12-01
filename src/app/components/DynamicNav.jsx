@@ -4,14 +4,14 @@ import Link from 'next/link';
 
 const DynamicNav = () => {
   return (
-    <div className="xl:flex hidden mt-[10vh] items-center justify-center w-[100%] min-h-[10vh] group flex-col relative">
+    <div className="xl:flex hidden z-50 mt-[10vh] items-center justify-center w-[100%] min-h-[10vh] group flex-col relative">
       <div className="flex items-center justify-center w-full h-[20%] flex-col">
         {/* Navigation Links */}
         <div className="flex items-center justify-between gap-[5vw] flex-wrap">
           {['RINGS', 'NECKLACES', 'EARINGS', 'ENGAGEMENT RINGS', 'WEDDING RINGS', 'BRACELETS', 'COLLECTIONS', 'GIFTS', 'BLOG'].map((text, index) => (
             <Link
               key={index}
-              href={`/${text.toLowerCase().replace(" ", "")}`}
+              href="/category/ring"
               className="custom-underline relative inline-block text-black text-[14px] font-semibold hover:text-black hover:no-underline group"
             >
               {text}
@@ -98,7 +98,7 @@ const DynamicNav = () => {
                 <h4>{item.title}</h4>
               </div>
             ))}
-            <Link className="underline hover:text-[#CAA968]" href={category.link}>
+            <Link className="underline hover:text-[#CAA968]" href="/category/ring">
               Explore All
             </Link>
           </div>
