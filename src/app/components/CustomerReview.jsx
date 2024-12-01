@@ -1,64 +1,150 @@
+import React from 'react';
+import Link from 'next/link'; // Ensure to import Link from 'next/link'
 
-'use client'
-import React from 'react'
-import { useState } from 'react';
+const reviews = [
+  {
+    title: 'Beautiful!',
+    description: 'Beautiful!',
+    imageUrl:
+      'https://assets.angara.com/bracelet/sb0425d/3mm-hsi2-diamond-yellow-gold-bracelet.jpg?width=256&quality=95',
+    productUrl: '/p/graduated-bezel-set-diamond-bolo-bracelet-sb0425d',
+    rating: 5,
+    customerName: 'Robert V.',
+    reviewDate: '29 Nov, 2024',
+  },
+  {
+    title: 'Ring',
+    description: 'Beautiful ring, so amazing.',
+    imageUrl:
+      'https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=256&quality=95',
+    productUrl: '/p/solitaire-round-diamond-infinity-promise-ring-sr1437d',
+    rating: 5,
+    customerName: 'Brooklyn H.',
+    reviewDate: '29 Nov, 2024',
+  },
+  {
+    title: 'Beautiful!',
+    description: 'Beautiful!',
+    imageUrl:
+      'https://assets.angara.com/bracelet/sb0425d/3mm-hsi2-diamond-yellow-gold-bracelet.jpg?width=256&quality=95',
+    productUrl: '/p/graduated-bezel-set-diamond-bolo-bracelet-sb0425d',
+    rating: 5,
+    customerName: 'Robert V.',
+    reviewDate: '29 Nov, 2024',
+  },
+  {
+    title: 'Ring',
+    description: 'Beautiful ring, so amazing.',
+    imageUrl:
+      'https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=256&quality=95',
+    productUrl: '/p/solitaire-round-diamond-infinity-promise-ring-sr1437d',
+    rating: 5,
+    customerName: 'Brooklyn H.',
+    reviewDate: '29 Nov, 2024',
+  },
+  {
+    title: 'Beautiful!',
+    description: 'Beautiful!',
+    imageUrl:
+      'https://assets.angara.com/bracelet/sb0425d/3mm-hsi2-diamond-yellow-gold-bracelet.jpg?width=256&quality=95',
+    productUrl: '/p/graduated-bezel-set-diamond-bolo-bracelet-sb0425d',
+    rating: 5,
+    customerName: 'Robert V.',
+    reviewDate: '29 Nov, 2024',
+  },
+  {
+    title: 'Ring',
+    description: 'Beautiful ring, so amazing.',
+    imageUrl:
+      'https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=256&quality=95',
+    productUrl: '/p/solitaire-round-diamond-infinity-promise-ring-sr1437d',
+    rating: 5,
+    customerName: 'Brooklyn H.',
+    reviewDate: '29 Nov, 2024',
+  },
+  {
+    title: 'Beautiful!',
+    description: 'Beautiful!',
+    imageUrl:
+      'https://assets.angara.com/bracelet/sb0425d/3mm-hsi2-diamond-yellow-gold-bracelet.jpg?width=256&quality=95',
+    productUrl: '/p/graduated-bezel-set-diamond-bolo-bracelet-sb0425d',
+    rating: 5,
+    customerName: 'Robert V.',
+    reviewDate: '29 Nov, 2024',
+  },
+  {
+    title: 'Ring',
+    description: 'Beautiful ring, so amazing.',
+    imageUrl:
+      'https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=256&quality=95',
+    productUrl: '/p/solitaire-round-diamond-infinity-promise-ring-sr1437d',
+    rating: 5,
+    customerName: 'Brooklyn H.',
+    reviewDate: '29 Nov, 2024',
+  },
+  // Add more reviews if needed
+];
 
 const CustomerReview = () => {
-  
-       const [currentIndex, setCurrentIndex] = useState(0);
-
-       const reviews = [
-        { name: "John Doe", rating: 5, feedback: "Amazing service and great quality!" },
-        { name: "Jane Smith", rating: 4, feedback: "Very satisfied, would recommend!" },
-        { name: "Sam Wilson", rating: 5, feedback: "Exceeded my expectations!" },
-        { name: "Lisa Brown", rating: 3, feedback: "Good, but could improve in some areas." },
-        { name: "Mark Lee", rating: 4, feedback: "Great experience overall!" },
-      ];
-const handlePrev = () => {
-  setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
-};
-
-const handleNext = () => {
-  setCurrentIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
-};
-
-return (
-  <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md">
-    <h2 className="text-2xl font-bold mb-4">Customer Reviews</h2>
-    <div className="relative w-full max-w-lg overflow-hidden">
-      <div
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {reviews.map((review, index) => (
-          <div
-            key={index}
-            className="w-full flex-shrink-0 p-4 bg-white rounded-lg shadow-md mx-2 text-center"
-          >
-            <h3 className="text-xl font-semibold">{review.name}</h3>
-            <p className="text-yellow-500">{"★".repeat(review.rating)}</p>
-            <p className="text-gray-600 mt-2">{review.feedback}</p>
+  return (
+    <section
+      className="section-gap flex flex-col items-center justify-center py-[10%] bg-gray-50"
+      
+    >
+      <div className="container text-center px-4 sm:px-8">
+        <div className="inner-container">
+          <div className="section-heading mb-8">
+            <h2 className="sm:text-2xl text-gray-800 text-xl font-semibold mb-2">What Customers Are Saying</h2>
+           
           </div>
-        ))}
+          <div className="review-block">
+            <div className="slick-slider" dir="ltr">
+              <div className="slick-list flex items-center justify-center">
+                <div className="slick-track flex gap-6 overflow-x-auto scrollbar-hidden snap-x snap-mandatory">
+                  {reviews.map((review, index) => (
+                    <div
+                      key={index}
+                      className="review-card-wrapper flex-shrink-0 w-72 sm:w-80 h-auto bg-white shadow-lg rounded-lg p-4 flex flex-col items-center justify-center snap-center"
+                    >
+                      <Link href={review.productUrl} className="text-blue-500 mb-4">
+                        <img
+                          alt={review.title}
+                          src={review.imageUrl}
+                          className="w-32 h-32 object-contain"
+                          loading="lazy"
+                        />
+                      </Link>
+                      <div className="title text-lg font-medium">{review.title}</div>
+                      <div className="review-stars my-2">
+                        <div className="star-rating">
+                          <span className="half-star text-yellow-400">★★★★★</span>
+                          <span className="full-star text-yellow-400" style={{ width: '100%' }}>
+                            ★★★★★
+                          </span>
+                        </div>
+                      </div>
+                      <div className="customer-review text-gray-600 text-sm text-center">
+                        {review.description}
+                      </div>
+                      <div className="customer-name text-gray-700 font-semibold mt-4">
+                        {review.customerName}{' '}
+                        <span className="text-gray-500 text-sm">({review.reviewDate})</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
       </div>
-      <button
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 text-black rounded-full p-2"
-        onClick={handlePrev}
-      >
-       <i className="ri-arrow-left-line"></i>
-      </button>
-      <button
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 text-black rounded-full p-2"
-        onClick={handleNext}
-      >
-       <i className="ri-arrow-right-line"></i>
-      </button>
-    </div>
-  </div>
-);
+      <Link href="/b/customer-reviews" className="-ml-[10%] mt-[2%] text-blue-500 underline">
+              Reviews
+            </Link>
+    </section>
+  );
+};
 
-
- 
-}
-
-export default CustomerReview
+export default CustomerReview;

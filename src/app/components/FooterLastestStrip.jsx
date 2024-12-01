@@ -55,7 +55,7 @@ const FooterLastestStrip = () => {
     </div>
 </div>
 
-<div className='cursor-pointer w-full mt-[2vw] py-[10px] text-center text-gray-700 h-[8vh] bg-[#E7E7E9]'>
+<div className='cursor-pointer w-[100%] mt-[2vw] py-[10px] text-center text-gray-700 h-[8vh] bg-[#E7E7E9]'>
             &copy;  2024 BR Inc. All Rights Reserved
 </div>
 

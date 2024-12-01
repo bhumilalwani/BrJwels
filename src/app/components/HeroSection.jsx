@@ -6,7 +6,7 @@ const  HeroSection = () => {
     <div className=''>
       <div className="relative mt-[10px] w-full h-screen overflow-hidden">
   {/* <!-- Background Video --> */}
-  <video autoPlay loop muted src="/videos/Hero-Banner.mp4" className="absolute inset-0 w-full h-full object-cover z-[-1]"
+  <video autoPlay loop muted src="/videos/Hero-Banner.mp4" className="absolute inset-0 w-full sm:h-full h-[70%] object-cover z-[-1]"
   >
    
     Your browser does not support the video tag.
@@ -33,17 +33,17 @@ const  HeroSection = () => {
 
 
 
-<section className="ml-[15%] mt-[5%] w-fit ">
+<section className="sm:mt-[5%] -mt-[30%] sm:mb-[5%] mb-[10%] mx-auto w-fit ">
   <div className="container mx-auto">
-    <div className="flex items-center gap-10 flex-wrap">
+    <div className="sm:flex grid grid-cols-3 items-center sm:gap-10 sm:flex-wrap">
       {/* Rings */}
       <div className="group relative">
         <Link
-          href="/c/rings"
+          href="/category/ring"
           className="block text-center"
           aria-label="Rings Category"
         >
-          <div className="relative w-[153px] h-[153px] mx-auto">
+          <div className="relative w-[80px] h-[80px] sm:w-[153px] sm:h-[153px] mx-auto">
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-100 group-hover:opacity-0"
               src="https://assets.angara.com/assets/homepage-Assets/new-assets/us/top-categories/rings.jpg?width=414&quality=95"
@@ -55,17 +55,17 @@ const  HeroSection = () => {
               alt="Secondary Image of Rings category"
             />
           </div>
-          <span className="mt-2 block text-lg text-gray-600 font-normal">Rings</span>
+          <span className="category-label">Rings</span>
         </Link>
       </div>
       {/* Earrings */}
       <div className="group relative">
         <Link
-          href="/c/earrings"
+          href="/category/ring"
           className="block text-center"
           aria-label="Earrings Category"
         >
-          <div className="relative w-[153px] h-[153px] mx-auto ">
+          <div className="relative w-[80px] h-[80px] sm:w-[153px] sm:h-[153px] mx-auto ">
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-100 group-hover:opacity-0"
               src="https://assets.angara.com/assets/homepage-Assets/new-assets/us/top-categories/earrings.jpg?width=414&quality=95"
@@ -77,17 +77,17 @@ const  HeroSection = () => {
               alt="Secondary Image of Earrings category"
             />
           </div>
-          <span className="mt-2 block text-lg text-gray-600 font-normal hover:no-underline">Earrings</span>
+          <span className="category-label">Earrings</span>
         </Link>
       </div>
       {/* Necklaces */}
       <div className="group relative">
         <Link
-          href="/c/pendants"
+          href="/category/ring"
           className="block text-center"
           aria-label="Necklaces Category"
         >
-          <div className="relative w-[153px] h-[153px] mx-auto">
+          <div className="relative w-[80px] h-[80px] sm:w-[153px] sm:h-[153px] mx-auto">
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-100 group-hover:opacity-0"
               src="https://assets.angara.com/assets/homepage-Assets/new-assets/us/top-categories/necklace.jpg?width=414&quality=95"
@@ -99,17 +99,17 @@ const  HeroSection = () => {
               alt="Secondary Image of Necklaces category"
             />
           </div>
-          <span className="mt-2 block text-lg text-gray-600 font-normal">Necklaces</span>
+          <span className="category-label">Necklaces</span>
         </Link>
       </div>
       {/* Bracelets */}
       <div className="group relative">
         <Link
-          href="/c/bracelets"
+          href="/category/ring"
           className="block text-center"
           aria-label="Bracelets Category"
         >
-          <div className="relative w-[153px] h-[153px] mx-auto">
+          <div className="relative w-[80px] h-[80px] sm:w-[153px] sm:h-[153px] mx-auto">
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-100 group-hover:opacity-0"
               src="https://assets.angara.com/assets/homepage-Assets/new-assets/us/top-categories/bracelets.jpg?width=414&quality=95"
@@ -121,17 +121,17 @@ const  HeroSection = () => {
               alt="Secondary Image of Bracelets category"
             />
           </div>
-          <span className="mt-2 block text-lg text-gray-600 font-normal">Bracelets</span>
+          <span className="category-label">Bracelets</span>
         </Link>
       </div>
       {/* Lab Diamond Jewelry */}
       <div className="group relative">
         <Link
-          href="/c/lab+grown+diamond-jewelry"
+          href="/category/ring"
           className="block text-center"
           aria-label="Lab Diamond Jewelry Category"
         >
-          <div className="relative w-[153px] h-[153px] mx-auto">
+          <div className="relative w-[80px] h-[80px] sm:w-[153px] sm:h-[153px] mx-auto">
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-100 group-hover:opacity-0"
               src="https://assets.angara.com/assets/homepage-Assets/new-assets/us/top-categories/lab-grown-jewelry.jpg?width=414&quality=95"
@@ -143,7 +143,7 @@ const  HeroSection = () => {
               alt="Secondary Image of Lab Diamond Jewelry category"
             />
           </div>
-          <span className="mt-2 block text-lg text-gray-600 font-normal">
+          <span className="category-label">
             Lab Diamond Jewelry
           </span>
         </Link>
@@ -151,11 +151,11 @@ const  HeroSection = () => {
       {/* GIA Collection */}
       <div className="group relative">
         <Link
-          href="/c/certified-jewelry"
+          href="/category/ring"
           className="block text-center"
           aria-label="GIA Collection Category"
         >
-          <div className="relative w-[153px] h-[153px] mx-auto">
+          <div className="relative w-[80px] h-[80px] sm:w-[153px] sm:h-[153px] mx-auto">
             <img
               className="absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 opacity-100 group-hover:opacity-0"
               src="https://assets.angara.com/assets/homepage-Assets/new-assets/us/top-categories/certified-jewelry.jpg?width=414&quality=95"
@@ -167,7 +167,7 @@ const  HeroSection = () => {
               alt="Secondary Image of GIA Collection category"
             />
           </div>
-          <span className="mt-2 block text-lg text-gray-600 font-normal">
+          <span className="category-label">
             GIA Collection
           </span>
         </Link>

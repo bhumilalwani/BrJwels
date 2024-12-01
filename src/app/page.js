@@ -22,7 +22,7 @@ import Edit from "./components/Edit";
 
 export default function Home() {
   return (
-   <div className="overflow-x-hidden">
+   <div className="">
         <StaticNav></StaticNav>
         <DynamicNav></DynamicNav>
         <HeroSection></HeroSection>

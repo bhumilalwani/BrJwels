@@ -32,7 +32,7 @@ body {
     left: 50%;
     width: 0;
     height: 2px; /* Underline thickness */
-    background-color: blue; /* Default color */
+    background-color: goldenrod; /* Default color */
     transition: all 0.3s ease-in-out;
     transform: translateX(-50%); /* Ensure it starts from the center */
   }
@@ -40,5 +40,22 @@ body {
   .custom-underline:hover::after {
     width: 100%; /* Make the underline fill the whole width */
     background-color: #D1AF97; /* Change color on hover */
+  }
+  /* Tailwind utilities */
+.category-label {
+    @apply mt-2 block sm:text-lg text-gray-600 font-normal text-center;
+    height: 3rem; /* Adjust this height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Hides the scrollbar */
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
   }
   

@@ -4,6 +4,10 @@ import React, { useState } from 'react';
 const Birthdays = () => {
   const images = [
     "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
+    "https://assets.angara.com/assets/homepage-Assets/us/birthstones/december.jpg?width=128&quality=95",
+    "https://assets.angara.com/assets/homepage-Assets/us/birthstones/august.jpg?width=128&quality=95",
+    "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
+    "https://assets.angara.com/assets/homepage-Assets/us/birthstones/november.jpg?width=128&quality=95",
     "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
     "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
     "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
@@ -11,13 +15,6 @@ const Birthdays = () => {
     "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
     "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
     "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
-    "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
-    "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
-    "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
-    "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
-    "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png",
-
-    
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,62 +32,61 @@ const Birthdays = () => {
   };
 
   return (
-    <div className='flex flex-col mt-[5vh]'>
-        <h4 className='font-semibold text-2xl text-center'>Make Birthdays More Colorful</h4>
-    <div className="relative w-[70%] mx-auto mt-[6vh] mb-[10vh] overflow-hidden">
-      {/* Previous Button */}
-      <button
-        className={`absolute top-1/2 left-4 transform -translate-y-3/4 text-3xl z-10 ${
-          currentIndex === 0 ? 'opacity-50' : ''
-        }`}
-        onClick={handlePrev}
-        // disabled={currentIndex === 0}
-      >
-        <i className="ri-arrow-left-s-line text-black text-lg "></i>
-      </button>
-
-      {/* Swiper Wrapper */}
-      <div className="flex justify-center items-center">
-        <div
-          className="swiper-wrapper flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${currentIndex * 10}%)`,
-            width: `${images.length * 100}%`,
-          }}
+    <div className='flex flex-col mt-[5vh] overflow-hidden px-[10vw]'>
+            <h4 className='font-semibold text-2xl text-center'>Make Birthdays More Colorful</h4>
+     <div className='flex flex-row items-center'>
+       {/* Previous Button */}
+       <button
+          className={`transform -mt-[8vh] text-3xl z-10 ${
+            currentIndex === 0 ? 'hidden' : ''
+          }`}
+          onClick={handlePrev}
         >
-          {images.map((image, index) => (
-            <div
-              className="swiper-slide flex flex-col justify-center items-center w-full shrink-0"
-              key={index}
-              style={{ width: `${100 / images.length}%` }}
-            >
-              <img
-                className="w-[30%] h-[45%]"
-                src={image}
-                alt={`Slide ${index + 1}`}
-              />
-              <h3 className="text-gray-500 mt-2">January</h3>
-            </div>
-          ))}
-        </div>
-      </div>
+          <i className="ri-arrow-left-s-line text-black text-lg"></i>
+        </button>
+      <div className="relative w-[70%] mx-auto mt-[6vh] mb-[10vh] overflow-hidden">
+     
 
-      {/* Next Button */}
-      <button
-        className={`absolute top-1/2 right-4 transform -translate-y-3/4 text-3xl z-10 ${
-          currentIndex === images.length - 1 ? 'opacity-50 ' : ''
-        }`}
-        onClick={handleNext}
-        // disabled={currentIndex === images.length - 1}
-      >
-        <i className="ri-arrow-right-s-line text-black text-lg"></i>
-      </button>
-    </div>
-        
-        <div className='w-full h-[80%] cursor-pointer'>
-            <img className='w-[100%] h-[100%]' src="https://i.pinimg.com/1200x/c0/2f/6e/c02f6e73c46a6d381439c017f1b31e50.jpg" alt="" />
+        {/* Swiper Wrapper */}
+        <div className="flex justify-center gap-[10px] w-fit overflow-hidden items-center">
+          <div
+            className="swiper-wrapper flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${(currentIndex / images.length) * 100}%)`,
+              width: `${images.length * 100}%`,
+            }}
+          >
+            {images.map((image, index) => (
+              <div
+                className="swiper-slide flex flex-col justify-center rounded-[10px] p-[10px] hover:bg-gray-100 group cursor-pointer ml-[20px] items-center w-full shrink-0"
+                key={index}
+                style={{ width: `${100 / images.length}%` }}
+              >
+                <img
+                  className="w-[30%] h-[45%]"
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                />
+                <h3 className="text-gray-500 mt-2 group-hover:underline">January</h3>
+              </div>
+            ))}
+          </div>
         </div>
-        
+
+        {/* Next Button */}
+       
+      </div>
+      <button
+          className={`-mt-[8vh] transform text-3xl z-10 ${
+            currentIndex === images.length - 3 ? 'hidden' : ''
+          }`}
+          onClick={handleNext}
+        >
+          <i className="ri-arrow-right-s-line text-black text-lg"></i>
+        </button></div> 
+      <div className='w-full h-[80%] sm:h-[30vh] sm:h-[50vh] mb-[4vh] sm:mb-[10vh] cursor-pointer'>
+        <img className='w-full h-[100%]' src="https://assets.angara.com/promotion/NewHomePage2024/HomepageGiftingMainBannerDesktop.jpg" alt="" />
+      </div>
     </div>
   );
 };
