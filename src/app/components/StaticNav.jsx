@@ -175,7 +175,10 @@ const StaticNav = () => {
             className="flex items-center justify-between p-3 border-b cursor-pointer hover:text-[#CAA968]"
             onClick={() => handleCategoryClick(category)}
           >
-            <span className="text-lg">{category}</span>
+            <Link href="/category/ring">
+            {/* {`/${category.toLowerCase().replace(/\s+/g, '-')}`} */}
+              <span className="text-lg">{category}</span>
+            </Link>
             <i className="ri-arrow-right-s-line text-xl"></i>
           </div>
         ))
@@ -184,7 +187,7 @@ const StaticNav = () => {
             key={index}
             className="flex items-center justify-between p-3 border-b cursor-pointer hover:text-[#CAA968]"
           >
-            <Link href={`/${subcategory.toLowerCase().replace(/\s+/g, '-')}`}>
+            <Link href="/category/product">
               <span className="text-lg">{subcategory}</span>
             </Link>
           </div>
