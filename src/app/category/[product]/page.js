@@ -86,7 +86,7 @@ const Page = () => {
         </h2>
         <p className='text-sm mt-[1vh] sm:w-[30%] font-semibold text-gray-500 '>
           Make a statement wherever you go with handcrafted rings from Angara.
-          From "love" tokens to outfit pick-me-ups, we have got them all. Get exploring
+          From &quot;love tokens to outfit pick-me-ups, we have got them all. Get exploring
         </p></div>
         <div className='grid grid-cols-2 sm:flex scrollbar-hidden overflow-x-scroll -translate-x-[0%] sm:-ml-[45%] p-[1vw] gap-3 mt-[5vh]'>
             <div className='flex sm:w-[18vw] items-center relative justify-center'>
