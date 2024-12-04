@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import StaticNav from "./components/StaticNav";
 import DynamicNav from "./components/DynamicNav";
 import HeroSection from "./components/HeroSection";
@@ -16,9 +16,6 @@ import ReasonsToShop from "./components/ReasonsToShop";
 import Gifts from "./components/Gifts";
 import CustomerReview from "./components/CustomerReview";
 import Edit from "./components/Edit";
-
-
-
 
 export default function Home() {
   return (
@@ -38,6 +35,7 @@ export default function Home() {
         <Edit></Edit>
         <CustomerReview></CustomerReview>
         <BottomSign></BottomSign>
+        <div className="sm:h-[10vh] h-[2vh]"></div>
         <Awards></Awards>
         <LastFooter></LastFooter>
         <FooterLastestStrip></FooterLastestStrip>

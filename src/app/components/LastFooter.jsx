@@ -1,68 +1,121 @@
-import React from 'react'
-import Link from 'next/link'
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 const LastFooter = () => {
+  const [visibleSection, setVisibleSection] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Function to update the state based on the window width
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    // Set initial state
+    handleResize();
+
+    // Attach event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleSection = (section) => {
+    setVisibleSection(visibleSection === section ? null : section);
+  };
+
+  const sections = [
+    {
+      title: "ASSISTANCE",
+      links: [
+        "Contact",
+        "Email Us",
+        "Chat With Us",
+        "Track Your Order",
+        "Returns & Exchange",
+        "Resize & Repair",
+        "FAQs",
+        "Accessibility",
+      ],
+    },
+    {
+      title: "EXPERIENCE BR",
+      links: [
+        "The BR Difference",
+        "Free Express Shipping",
+        "Free Returns",
+        "Payment Options",
+        "Lifetime Warranty",
+        "Enhanced Warranty Plan",
+      ],
+    },
+    {
+      title: "SHOP",
+      links: [
+        "Lab Grown Jewelry",
+        "Diamond Jewelry",
+        "Sapphire Jewelry",
+        "Emerald Jewelry",
+        "Ruby Jewelry",
+        "Tanzanite Jewelry",
+        "Pearl Jewelry",
+        "Opal Jewelry",
+      ],
+    },
+    {
+      title: "ABOUT US",
+      links: ["Our Story", "Customer Reviews", "BR in the Press", "The Blog"],
+    },
+    {
+      title: "PARTNER WITH US",
+      links: ["Affiliate Program", "Join the Glam Squad"],
+    },
+    {
+      title: "PROMOTIONS",
+      links: ["Promo Codes & Offers", "US Service Discount", "Community Offers"],
+    },
+  ];
+
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[20px] px-[5vw] mt-[10vh] pb-[5vh] mb-[5vh] bg-[#F5F5F6]'>
-      <div className='flex flex-col'>
-        <h2 className='font-semibold my-[2.5vh]'>ASSISTANCE</h2>
-        <Link className='hover:text-[#d6993e]' href='/'>Contact</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Email Us</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Chat With Us</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Track Your Order</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Returns & Exchange</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Resize & Repair</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>FAQs</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Accessiblity</Link>
-      </div>
+    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[20px] px-[5vw] mt-[10vh] pb-[5vh] mb-[5vh] bg-[#F5F5F6]">
+      {sections.map((section, index) => (
+        <div key={index} className="flex flex-col items-start px-[10px]">
+          {/* Heading Section */}
+          <div
+            className={`flex items-center justify-between w-full cursor-pointer ${
+              isMobile && "sm:cursor-auto"
+            }`}
+            onClick={() => {
+              if (isMobile) toggleSection(index); // Toggle only in mobile view
+            }}
+          >
+            <h2 className="font-semibold my-[2.5vh]">{section.title}</h2>
+            {isMobile && (
+              <i
+                className={`text-xl ${
+                  visibleSection === index ? "ri-subtract-line" : "ri-add-line"
+                }`}
+              ></i>
+            )}
+          </div>
 
-      <div className='flex flex-col'>
-        <h2 className='font-semibold my-[2.5vh]'>EXPERIENCE BR</h2>
-        <Link className='hover:text-[#d6993e]' href='/'>The BR Difference</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Free Express Shipping</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Free Returns</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Payment Options</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Lifetime Warranty</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Enhanced Warranty Plan</Link>
-       
-      </div>
-
-      <div className='flex flex-col'>
-        <h2 className='font-semibold my-[2.5vh]'>SHOP</h2>
-        <Link className='hover:text-[#d6993e]' href='/'>Lab Grown Jewelry</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Diamond Jewelry</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Sapphire Jewelry</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Emerald Jewelry</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Ruby Jewelry</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Tanzanite Jewelry</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Pearl Jewelry</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Opal Jewelry</Link>
-      </div>
-
-      <div className='flex flex-col'>
-        <h2 className='font-semibold my-[2.5vh]'>ABOUT US</h2>
-        <Link className='hover:text-[#d6993e]' href='/'>Our Story</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Customer Reviews</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>BR in the Press</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>The Blog</Link>
-    
-      </div>
-
-      <div className='flex flex-col'>
-        <h2 className='font-semibold my-[2.5vh]'>PARTNER WITH US</h2>
-        <Link className='hover:text-[#d6993e]' href='/'>Affiliate Program</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Join the Glam Squad</Link>
-   
-      </div>
-
-      <div className='flex flex-col'>
-        <h2 className='font-semibold my-[2.5vh]'>PROMOTIONS</h2>
-        <Link className='hover:text-[#d6993e]' href='/'>Promo Codes & Offers</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>US Service Discount</Link>
-        <Link className='hover:text-[#d6993e]' href='/'>Community Offers</Link>
-      </div>
+          {/* Links */}
+          {(isMobile ? visibleSection === index : true) && (
+            <div className="w-full mt-2 space-y-2">
+              {section.links.map((link, i) => (
+                <Link key={i} className="block hover:text-[#d6993e]" href="/">
+                  {link}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default LastFooter
+export default LastFooter;

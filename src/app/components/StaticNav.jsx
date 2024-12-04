@@ -107,10 +107,6 @@ const StaticNav = () => {
 
 
 
-
-
-
-
       </div>
           {/* Icons */}
           <div className="flex items-center justify-center gap-[5px] sm:gap-[15px] pl-[5px]">

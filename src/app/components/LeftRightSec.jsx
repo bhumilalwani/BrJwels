@@ -57,29 +57,21 @@ const [currentIndex, setCurrentIndex] = useState(0);
       
 
   return (
-    <div className="mt-[10vh] mx-auto sm:px-[5%] flex flex-col">
-      <div className="flex flex-col sm:flex-row w-full items-center">
-        <div className="w-full sm:w-[60%] flex flex-col ml-[30px] sm:pr-[10px] p-[2vh] sm:pt-[6vh] sm:pb-[5vh] sm:pl-[20vh] items-start justify-start h-fit bg-[#F5F5F6]">
+    <div className="mt-[10vh]  w-full min-h-[60vh] py-[5vh] mx-auto sm:px-[5%] flex flex-col">
+      <div className="flex flex-col sm:flex-row w-full lg:h-[66vh] h-[50vh] items-center">
+        <div className="w-full sm:w-[60%] flex flex-col ml-[30px] sm:pr-[10px] p-[2vh] sm:pt-[6vh] sm:pb-[5vh] sm:pl-[20vh] items-start justify-start min-h-[100%] h-fit bg-[#F5F5F6]">
           <h3 className="mb-[1vh] text-lg font-semibold">Our 8 Cs Promise</h3>
-          <p className="min-w-[20vw] text-sm">
+          <p className="min-w-[20vw] mb-[10vh] text-sm">
             Unlike other e-tailers, we powered a 400-year legacy in gemstones and jewelry-making with cutting-edge
             technology to make bespoke fine jewelry accessible for the very first time. Without the middlemen, you can
             count on us to deliver your dream jewelry at high speed, and with 30 percent more value.
           </p>
-        </div>
-        <div className="sm:w-[40%] w-[80%] ">
-          <VideoCarousel currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
-        </div>
-        
-        
-      </div>
-      <div className="flex flex-col justify-center items-center mt-[4vh] bg-gray-50">
-      {/* Buttons Section */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-1 w-[100%] sm:w-[40%] mx-auto p-2">
+            {/* Buttons Section */}
+      <div className="md:grid hidden grid-cols-2 ml-[50%] -translate-x-[45%] gap-2 sm:gap-1 w-[100%] mx-auto p-2">
         {videos.map((video, index) => (
           <button
             key={video.id}
-            className={`flex gap-[5%] items-center p-1 rounded-md -mt-[10%] sm:mt-[0%] sm:w-[80%] transition ${
+            className={`flex gap-[5%] shrink-0 items-center p-1 rounded-md -mt-[12%] sm:mt-[0%] sm:w-[80%] transition ${
               index === currentIndex
                 ? "bg-gray-300 "
                 : "bg-white "
@@ -89,9 +81,38 @@ const [currentIndex, setCurrentIndex] = useState(0);
             <img
               src={video.poster}
               alt={video.title}
-              className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] rounded-full mb-2"
+              className="w-[30px] h-[30px] -ml-[10%] rounded-full mb-2"
             />
-            <span className="text-sm sm:text-lg font-semibold">{video.title}</span>
+            <span className="text-xs text-gray-600 font-semibold">{video.title}</span>
+          </button>
+        ))}
+      </div>
+        </div>
+        <div className="sm:w-[40%] -mt-[20vh] sm:mt-[0vh] w-[80%] md:flex flex-col items-center gap-[0] justify-center">
+          <VideoCarousel className="fit-cover" currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
+       
+        </div>
+             
+      </div>
+      <div className="flex flex-col justify-center items-center sm:-mt-[8vh] mx-auto bg-gray-50">
+      {/* Buttons Section */}
+      <div className="grid grid-cols-2 md:hidden mt-[55vw] sm:mt-[0vh] gap-4 sm:gap-4 w-[100%] sm:w-[100%] mx-auto p-2">
+        {videos.map((video, index) => (
+          <button
+            key={video.id}
+            className={`flex gap-[5%] items-center relative w-[80%] p-1 rounded-md sm:w-[80%] transition ${
+              index === currentIndex
+                ? "bg-gray-300 "
+                : "bg-white "
+            } hover:bg-gray-400 hover:text-gray-800`}
+            onClick={() => setCurrentIndex(index)}
+          >
+            <img
+              src={video.poster}
+              alt={video.title}
+              className="w-[30px] absolute -left-[10%] top-[1.083%] h-[30px] sm:w-[45px] sm:h-[45px] rounded-full mb-2"
+            />
+            <span className="text-sm sm:text-lg ml-[5vw] font-semibold">{video.title}</span>
           </button>
         ))}
       </div>
@@ -173,7 +194,7 @@ const VideoCarousel = (props) => {
         </div>
   
         {/* Navigation */}
-        <div className="flex justify-center mt-[10px] space-x-4">
+        <div className="flex justify-center mt-[6px] space-x-4">
           {videos.map((video, index) => (
             <button
               key={video.id}

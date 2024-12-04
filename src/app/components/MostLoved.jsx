@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const MostLoved = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,7 +55,7 @@ const MostLoved = () => {
                                 }}
                             >
                                 {birthstones.map((stone, index) => (
-                                    <div
+                                    <Link href="/productDetails/hsbcs"
                                         key={index}
                                         className="relative w-fit text-left bg-white px-[6%] sm:px-10 py-6 rounded-lg hover:shadow-lg"
                                     >
@@ -77,7 +78,7 @@ const MostLoved = () => {
                                         <button className="sm:px-[50px] px-[30px] mb-[2vh] mt-[4vh] py-[8px] border-[1.5px] border-solid border-black whitespace-nowrap">
                                             Customize Now
                                         </button>
-                                    </div>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

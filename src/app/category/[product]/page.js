@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
-
-
+import Link from 'next/link';
 import StaticNav from '@/app/components/StaticNav';
 import DynamicNav from '@/app/components/DynamicNav';
 
@@ -89,7 +88,7 @@ const Page = () => {
           From &quot;love tokens to outfit pick-me-ups, we have got them all. Get exploring
         </p></div>
         <div className='grid grid-cols-2 sm:flex scrollbar-hidden overflow-x-scroll -translate-x-[0%] sm:-ml-[45%] p-[1vw] gap-3 mt-[5vh]'>
-            <div className='flex sm:w-[18vw] items-center relative justify-center'>
+            <Link href="/productDetails/jbdckjmost" className='flex sm:w-[18vw] items-center relative justify-center'>
               <div className='w-[44vw] overflow-hidden'>
                 <img
                   className='w-[100%] h-[22vh] hover:scale-125 transform-transition duration-500'
@@ -100,7 +99,7 @@ const Page = () => {
               <h3 className='absolute top-[78%] text-left ml-[2%] text-lg font-semibold text-gray-200 capitalize'>
                 white gem
               </h3>
-            </div>
+            </Link>
          
             <div className='flex sm:w-[18vw] items-center relative justify-center'>
               <div className='w-[44vw] overflow-hidden'>
