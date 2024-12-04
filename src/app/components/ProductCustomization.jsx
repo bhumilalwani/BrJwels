@@ -30,7 +30,7 @@ const ProductCustomization=()=>{
               key={quality.label}
               onClick={() => setSelectedQuality(quality.label)}
               className={`p-2 border rounded-md text-center ${
-                selectedQuality === quality.label ? 'border-blue-600' : 'border-gray-200'
+                selectedQuality === quality.label ? 'border-gray-600' : 'border-gray-200'
               }`}
             >
               <div className="text-xs">{quality.label}</div>
@@ -48,7 +48,7 @@ const ProductCustomization=()=>{
               key={carat}
               onClick={() => setSelectedCarat(carat)}
               className={`p-2 border rounded-md ${
-                selectedCarat === carat ? 'border-blue-600' : 'border-gray-200'
+                selectedCarat === carat ? 'border-gray-600' : 'border-gray-200'
               }`}
             >
               <div className="text-xs">{carat}</div>
@@ -70,7 +70,7 @@ const ProductCustomization=()=>{
               key={metal.type}
               onClick={() => setSelectedMetal(metal.type)}
               className={`p-2 border rounded-md flex items-center gap-2 ${
-                selectedMetal === metal.type ? 'border-blue-600' : 'border-gray-200'
+                selectedMetal === metal.type ? 'border-gray-600' : 'border-gray-200'
               }`}
             >
               <span className={`w-4 h-4 rounded-full ${metal.color}`}></span>
@@ -91,7 +91,7 @@ const ProductCustomization=()=>{
               key={size}
               onClick={() => setSelectedSize(size)}
               className={`min-w-[48px] h-12 border rounded-md flex items-center justify-center ${
-                selectedSize === size ? 'border-blue-600 bg-blue-50' : 'border-gray-200'
+                selectedSize === size ? 'border-gray-800 bg-gray-50' : 'border-gray-200'
               }`}
             >
               {size}

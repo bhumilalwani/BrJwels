@@ -68,10 +68,10 @@ const StaticNav = () => {
   };
 
   return (
-    <div>
+    <div className='bg-white'>
       {/* Navbar */}
       <div
-        className={`fixed top-0 w-full z-50 transition-transform duration-300 ${
+        className={`fixed top-0 w-full z-30 transition-transform duration-300 ${
           isNavbarVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -94,7 +94,7 @@ const StaticNav = () => {
          
 
              {/* Search Bar for Large Screens */}
-<div className="hidden sm:flex items-center justify-center px-[10px] py-[5px] rounded-[2px] border-[1px] border-black">
+<div className="hidden sm:flex items-center justify-center px-[10px] py-[5px] rounded-[2px] border-[1px] bg-white border-black">
   <div className="flex items-center justify-center gap-[5px] sm:gap-[10px]">
     <i className="ri-search-line text-normal sm:text-xl"></i>
     <input
@@ -146,7 +146,7 @@ const StaticNav = () => {
   style={{ height: '100vh', overflowY: 'auto' }} // Added inline style for full height and scrolling
 >
   {/* Menu Links */}
-  <div className="p-4">
+  <div className="p-4 bg-white">
     {/* Menu Header */}
     <div className="flex items-center justify-between p-4 border-b">
       {currentCategory !== 'main' && (

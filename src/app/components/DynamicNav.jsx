@@ -1,15 +1,23 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const DynamicNav = () => {
+    const [hoveredNav, setHoveredNav] = useState(null);
+    const handleMouseEnter = (text) => {
+        setHoveredNav(text);
+        console.log(`Hovered on: ${text}`);
+      };
+    
   return (
-    <div className="xl:flex hidden z-50 mt-[10vh] items-center justify-center w-[100%] min-h-[10vh] group flex-col relative">
+    <div className="xl:flex hidden z-50 mt-[10vh] bg-white items-center justify-center w-[100%] min-h-[10vh] backdrop-opacity-0 group flex-col relative">
       <div className="flex items-center justify-center w-full h-[20%] flex-col">
         {/* Navigation Links */}
-        <div className="flex items-center justify-between gap-[5vw] flex-wrap">
+        <div className="flex items-center bg-white justify-between gap-[5vw] flex-wrap">
           {['RINGS', 'NECKLACES', 'EARINGS', 'ENGAGEMENT RINGS', 'WEDDING RINGS', 'BRACELETS', 'COLLECTIONS', 'GIFTS', 'BLOG'].map((text, index) => (
             <Link
+              onMouseEnter={() => handleMouseEnter(text)}
               key={index}
               href="/category/ring"
               className="custom-underline relative inline-block text-black text-[14px] font-semibold hover:text-black hover:no-underline group"
@@ -18,7 +26,9 @@ const DynamicNav = () => {
             </Link>
           ))}
         </div>
-        <AllitemsDivHidden className="grid sm:grid-cols-5 sm:block sm:grid gap-[5vw] hidden group-hover:grid" />
+     
+        {hoveredNav!="BLOG" ? <AllitemsDivHidden className="flex xl:flex gap-[5vw] hidden group-hover:flex" /> : <AllItemsDivEdits></AllItemsDivEdits>}
+        {hoveredNav=="BLOG" ? <AllItemsDivEdits className="flex xl:flex gap-[5vw] hidden group-hover:flex"></AllItemsDivEdits> : <AllitemsDivHidden></AllitemsDivHidden>}
       </div>
     </div>
   );
@@ -30,8 +40,14 @@ const DynamicNav = () => {
             {
               name: "Natural Gem Stones",
               items: [
-                { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
+                {img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
+                {img: "https://assets.angara.com/assets/homepage-Assets/us/birthstones/august.jpg?width=128&quality=95", title: "Green Sapphire Rings" },
+                {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/september.jpg?width=128&quality=95", title:"Blue Sapphire Rings"},
+                {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/november.jpg?width=128&quality=95", title:"Citrine Rings"},
+                {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/october.jpg?width=128&quality=95", title:"Opal Rings"},
+                {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/june.jpg?width=128&quality=95", title:"Pearl Rings"},
+                {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/february.jpg?width=128&quality=95", title:"Amethyst Rings"},
+                {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/july.jpg?width=128&quality=95", title:"Ruby Rings"}
                 // Add more items here
               ],
               link: "/explore",
@@ -39,46 +55,61 @@ const DynamicNav = () => {
             {
                 name: "Natural Gem Stones",
                 items: [
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  // Add more items here
-                ],
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/november.jpg?width=128&quality=95", title:"Citrine Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/october.jpg?width=128&quality=95", title:"Opal Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/june.jpg?width=128&quality=95", title:"Pearl Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/february.jpg?width=128&quality=95", title:"Amethyst Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/july.jpg?width=128&quality=95", title:"Ruby Rings"}
+                    // Add more items here
+                  ],
                 link: "/explore",
               },
               {
                 name: "Natural Gem Stones",
                 items: [
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  // Add more items here
-                ],
+                    { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
+                     {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/november.jpg?width=128&quality=95", title:"Citrine Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/october.jpg?width=128&quality=95", title:"Opal Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/june.jpg?width=128&quality=95", title:"Pearl Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/february.jpg?width=128&quality=95", title:"Amethyst Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/july.jpg?width=128&quality=95", title:"Ruby Rings"}
+                    // Add more items here
+                  ],
                 link: "/explore",
               },
               {
                 name: "Natural Gem Stones",
                 items: [
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  // Add more items here
-                ],
+                    { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
+                    { img: "https://assets.angara.com/assets/homepage-Assets/us/birthstones/august.jpg?width=128&quality=95", title: "Green Sapphire Rings" },
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/october.jpg?width=128&quality=95", title:"Opal Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/june.jpg?width=128&quality=95", title:"Pearl Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/february.jpg?width=128&quality=95", title:"Amethyst Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/july.jpg?width=128&quality=95", title:"Ruby Rings"}
+                    // Add more items here
+                  ],
                 link: "/explore",
               },
               {
                 name: "Original Gem Stones",
                 items: [
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  // Add more items here
-                ],
+                    { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
+                    { img: "https://assets.angara.com/assets/homepage-Assets/us/birthstones/august.jpg?width=128&quality=95", title: "Green Sapphire Rings" },
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/september.jpg?width=128&quality=95", title:"Blue Sapphire Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/november.jpg?width=128&quality=95", title:"Citrine Rings"},
+                   // Add more items here
+                  ],
                 link: "/explore",
               },
               {
                 name: "Lab Gem Stones",
                 items: [
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
-                  // Add more items here
-                ],
+                    { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
+                    { img: "https://assets.angara.com/assets/homepage-Assets/us/birthstones/august.jpg?width=128&quality=95", title: "Green Sapphire Rings" },
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/february.jpg?width=128&quality=95", title:"Amethyst Rings"},
+                    {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/july.jpg?width=128&quality=95", title:"Ruby Rings"}
+                    // Add more items here
+                  ],
                 link: "/explore",
               },
             // Add more categories here
@@ -87,31 +118,57 @@ const DynamicNav = () => {
     
     
         return (
-            
-            <div className="absolute top-[100%] w-full bg-white h-fit px-[20px] py-[10px] grid grid-cols-5 gap-[5vw] hidden group-hover:grid">
-        {categories.map((category, index) => (
-          <div key={index} className="item flex flex-col items-center justify-center">
-            <h3>{category.name}</h3>
-            {category.items.map((item, idx) => (
-              <div key={idx} className="flex items-center justify-center gap-[5px]">
-                <img className="w-[20px] h-[20px]" src={item.img} alt={item.title} />
-                <h4>{item.title}</h4>
-              </div>
-            ))}
-            <Link className="underline hover:text-[#CAA968]" href="/category/ring">
-              Explore All
-            </Link>
+<div className='absolute top-[100%] z-50 w-full bg-white h-fit px-[8vh] hidden group-hover:flex py-[10px] flex items-center justify-between'>
+  <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[2vw] items-start w-[80%]">
+    {categories.map((category, index) => (
+      <div key={index} className="item col-auto flex flex-col items-start justify-start">
+        <h3 className='font-semibold text-base text-gray-700 mb-[2.5vh]'>{category.name}</h3>
+        {category.items.map((item, idx) => (
+          <div key={idx} className="flex items-center justify-start gap-[5px] mb-[2vh]">
+            <img className="w-[20px] h-[20px]" src={item.img} alt={item.title} />
+            <h4 className='font-normal text-sm text-gray-900 '>{item.title}</h4>
           </div>
         ))}
-        <div className=''>
-            <h3>Featured Gift</h3>
-            <img className='w-[20px]' src="https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png" alt="featured item" />
-            <h4>Red Sapphire Gift</h4>
-            <Link href="/explore">Explore All</Link>
-        </div>
+        <Link className="underline hover:text-[#CAA968]" href="/category/ring">
+          Explore All
+        </Link>
       </div>
+    ))}
+  </div>
+  <div className=''>
+    <h3 className='font-semibold text-base text-gray-700 mb-[2.5vh] w-[20%]'>Featured Gift</h3>
+    <div className='w-[14vw] relative h-[26vh] overflow-hidden'>
+      <img className='fit-cover hover:scale-150 transition-transform transition duration-500 w-[100%] h-[100%]' src="https://assets.angara.com/assets/gnb-assets/ring-banner.jpg?width=768&quality=95" alt="featured item" />
+    </div>
+    <Link href="/explore">Explore All</Link>
+  </div>
+</div>
       );
     };
+
+    const AllItemsDivEdits=()=>{
+        const edits=[
+            {img:"https://assets.angara.com/assets/gnb-assets/the-edit-trending-now.jpg?width=768&quality=95", title:"Jwelery Trends"},
+            {img:"https://assets.angara.com/assets/gnb-assets/theedit-education.jpg?width=768&quality=95", title:"Gemstones"},
+            {img:"https://assets.angara.com/assets/gnb-assets/the-edit-engagement-wedding.jpg?width=768&quality=95", title:"Jwelery Trends"},
+            {img:"https://assets.angara.com/assets/gnb-assets/the-edit-gift-idea.jpg?width=768&quality=95", title:"Jwelery Trends"},
+            {img:"https://assets.angara.com/assets/gnb-assets/the-edit-fashion-tips.jpg?width=768&quality=95", title:"Stylings Tips"},
+        ]
+        return (
+            <div className='absolute top-[100%] z-50 hidden group-hover:flex flex items-center justify-center gap-[20px] bg-white'>
+                {
+                    edits.map((edit)=>{
+                        return (
+                            <div key={edit.id} className='w-[19vw] overflow-hidden h-[40vh] flex items-center justify-start relative gap-[10px]'>
+                                <img className='hover-scale-125 w-[100%] h-[100%] h-[100%] fit-cover w-[100%] ' src={edit.img} alt={edit.title} />
+                                <div className='font-normal absolute text-xl backdrop-blur-xl w-[100%] h-[20%] top-[80%] left-[0%] opacity-1/2 text-gray-900'><span className='ml-[10%]'>{edit.title}</span></div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
 
 
 export default DynamicNav;
