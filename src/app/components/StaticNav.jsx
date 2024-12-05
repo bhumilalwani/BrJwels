@@ -86,7 +86,7 @@ const StaticNav = () => {
 
           {/* Logo */}
           <div className="logo ml-[5px] ">
-            <h1 className="text-2xl font-semibold cursor-pointer">BR JEW.</h1>
+            <Link href="/" className="text-2xl font-semibold cursor-pointer">BR JEW.</Link>
           </div>
           <div
         className={`mx-auto w-[30%] mt-[0vh] transition-transform duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}

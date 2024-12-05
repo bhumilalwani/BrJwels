@@ -1,20 +1,40 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const DynamicNav = () => {
+
+    const [isNavbarVisible, setNavbarVisible] = useState(true);
+    const lastScrollYRef = useRef(0);
     const [hoveredNav, setHoveredNav] = useState(null);
     const handleMouseEnter = (text) => {
         setHoveredNav(text);
         console.log(`Hovered on: ${text}`);
       };
-    
+      // Handle scroll direction for navbar visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollYRef.current && currentScrollY > 50) {
+        setNavbarVisible(false); // Hide on scroll down
+      } else {
+        setNavbarVisible(true); // Show on scroll up
+      }
+
+      lastScrollYRef.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="xl:flex hidden z-50 mt-[10vh] bg-white items-center justify-center w-[100%] min-h-[10vh] backdrop-opacity-0 group flex-col relative">
+    <div className={`xl:flex hidden bg-white z-20 mt-[10vh] items-center justify-center w-[100%] min-h-[10vh] backdrop-opacity-0 group flex-col relative ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="flex items-center justify-center w-full h-[20%] flex-col">
         {/* Navigation Links */}
-        <div className="flex items-center bg-white justify-between gap-[5vw] flex-wrap">
+        <div className="flex items-center justify-between gap-[5vw] flex-wrap">
           {['RINGS', 'NECKLACES', 'EARINGS', 'ENGAGEMENT RINGS', 'WEDDING RINGS', 'BRACELETS', 'COLLECTIONS', 'GIFTS', 'BLOG'].map((text, index) => (
             <Link
               onMouseEnter={() => handleMouseEnter(text)}

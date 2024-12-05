@@ -3,7 +3,7 @@ import React from 'react';
 
 const Collections = () => {
   return (
-    <div className="px-[20px] flex items-center justify-center gap-[20px] mt-[10vh] flex-wrap">
+    <div className="px-[20px] flex items-center justify-center gap-[20px] mt-[2vh] flex-wrap">
       {/* First Image Block */}
       <div className="w-full md:w-[40vw] lg:w-[30vw] h-[60vh] sm:h-[70vh] relative cursor-pointer overflow-hidden group">
         <img
