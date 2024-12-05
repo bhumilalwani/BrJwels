@@ -25,16 +25,7 @@ const Page = () => {
       "https://cdn.shopify.com/s/files/1/0256/7896/3506/products/engagementrings_1024x1024.jpg?v=1597937021",
       "https://i.etsystatic.com/17210700/r/il/fd0715/4555858865/il_1080xN.4555858865_4lps.jpg",
     ],
-    [
-        "https://raymondleejewelers.net/wp-content/uploads/2019/02/custom-design-a-ring-example.jpg",
-        "https://www.brides.com/thmb/kvx0c_MuM_CVlklXFQy0C6-WNrA=/2000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/il_fullxfull.1852208181_6mbc_2400x-a3b790cc79e04e73b00351b79b2008a2.jpg",
-        "https://i.pinimg.com/originals/a6/e9/ba/a6e9bacd8703944b93f9710a5250db75.jpg",
-      ],
-      [
-        "https://i.etsystatic.com/12828076/r/il/6cef40/2347357644/il_fullxfull.2347357644_6pfl.jpg",
-        "https://cdn.shopify.com/s/files/1/0256/7896/3506/products/engagementrings_1024x1024.jpg?v=1597937021",
-        "https://i.etsystatic.com/17210700/r/il/fd0715/4555858865/il_1080xN.4555858865_4lps.jpg",
-      ],
+   
     
      
           
@@ -178,7 +169,8 @@ const Page = () => {
       </div>
     </div>
           </div>
-          <div className='flex items-center justify-between w-[100%] mt-[4vh]'><h3 className='text-gray-600 text-xl font-bold'>5394 custom rings</h3>
+          <div className='flex items-center w-[100%] justify-between m-[40%] ml-[0] md:w-[60%] mt-[4vh]'>
+            <h3 className='text-gray-600 text-xl font-bold'>5394 custom rings</h3>
             <button
               onClick={toggleFilter}
               className='hover:bg-black hover:text-white duration-500 text-black md:hidden text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'
@@ -188,13 +180,13 @@ const Page = () => {
             <button className='hover:bg-black hover:text-white duration-500 text-black text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'>
               Sort By
             </button></div>
-        <div className='flex flex-col mt-[1vh] sm:flex-row gap-2'>
+        <div className='flex relative flex-col mt-[1vh] sm:flex-row items-start gap-2 -mt-[40%] '>
           
-          <div className='filter-sort sm:w-[30%] flex items-center justify-center gap-[5%] sm:gap-[15%] py-[20px] w-[100%]'>
+          <div className='filter-sort sticky top-20 sm:w-[30%] flex items-center justify-center gap-[5%] sm:gap-[15%] py-[20px] w-[100%]'>
           
            <FilterSectionForBigScreens className="hidden sm:flex"></FilterSectionForBigScreens>
           </div>
-          <div className='flex flex-col w-[100%] md:w-[72%] items-center mx-auto justify-center'><div className='grid ml-[10%] justify-center grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 p-[1vw] gap-3 mt-[0vh]'>
+          <div className='flex flex-col w-[100%] md:w-[72%] items-center mx-auto justify-center'><div className='grid ml-[10%] justify-center grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 p-[1vw] gap-3 mt-[0vh]'>
             {prevState.map((images, index) => (
               <ProductItem key={index} images={images} />
             ))}
@@ -258,38 +250,76 @@ const Page = () => {
     <FooterLastestStrip></FooterLastestStrip>
     </div>
   );
-};
+};  
 
-const ProductItem = ({ images }) => {
-  const [selectedImage, setSelectedImage] = useState(images[0]);
 
-  const handleImageClick = (index) => {
-    setSelectedImage(images[index]);
+
+const ProductItem = () => {
+  // State to track the currently displayed image
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array of images
+  const images = [
+    "https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=414&quality=95",
+    "https://assets.angara.com/ring/sr1432d/2.1mm-hsi2-diamond-white-gold-ring.jpg?width=414&quality=95",
+    "https://assets.angara.com/ring/sr1432d/2.1mm-hsi2-diamond-white-gold-ring.jpg?width=414&quality=95",
+    "https://assets.angara.com/ring/lsr4329d/10x8mm-fgvs-lab-grown-diamond-white-gold-ring.jpg?width=414&quality=95",
+  ];
+
+  // Handle dot click
+  const handleDotClick = (index) => {
+    setCurrentImageIndex(index);
   };
 
   return (
-    <div className='flex flex-col'>
-      <div className='h-[29vh] relative overflow-hidden'>
-        <img
-          className='w-[100%] h-[100%] object-cover'
-          src={selectedImage}
-          alt="Product Image"
-        />
-        <div className='absolute bottom-0 p-2 flex ml-[50%] -translate-x-[50%] flex-row justify-center gap-2'>
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`w-[8px] h-[8px] border-gray-300 rounded-full border-[1px] cursor-pointer ${
-                selectedImage === image ? "bg-gray-900" : "bg-transparent"
-              }`}
-              onClick={() => handleImageClick(index)}
-            ></div>
-          ))}
+    <div className="product-item relative z-0">
+      <div className="product-card flex flex-col items-center space-y-4 p-4">
+        {/* Image Section */}
+        <div className="media relative">
+          <div className="slider-wrapper w-[20vw] h-[30vh] ">
+            <img
+              className="rounded-lg transition-opacity duration-300"
+              alt="Lab-Grown Round Diamond Solitaire Classic Engagement Ring"
+              src={images[currentImageIndex]}
+            />
+          </div>
+          {/* Sticky Dots */}
+          <ul className="slick-dots flex justify-center space-x-2 mt-2 absolute bottom-2 w-full">
+            {images.map((_, index) => (
+              <li
+                key={index}
+                className={`cursor-pointer ${
+                  currentImageIndex === index ? "slick-active" : ""
+                }`}
+                onClick={() => handleDotClick(index)}
+              >
+                <span
+                  className={`custom-dot inline-block w-2 h-2 rounded-full ${
+                    currentImageIndex === index
+                      ? "bg-gray-800"
+                      : "bg-gray-400"
+                  }`}
+                ></span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Text Section */}
+        <div className="text-left">
+          <h3 className="product-name text-base font-medium">
+            Lab-Grown Round Diamond Solitaire Classic Engagement Ring
+          </h3>
+          <span className="price text-md text-gray-700">$1,049 - $3,669</span>
         </div>
       </div>
     </div>
   );
 };
+
+
+
+
 
 const FilterSection = (props) => {
     const setShowFilter = props.setShowFilter;

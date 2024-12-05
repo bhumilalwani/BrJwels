@@ -94,7 +94,7 @@ const StaticNav = () => {
          
 
              {/* Search Bar for Large Screens */}
-<div className="hidden sm:flex items-center justify-center px-[10px] py-[5px] rounded-[2px] border-[1px] bg-white border-black">
+<div className="hidden sm:flex items-center justify-center w-fit px-[10px] py-[5px] rounded-[2px] border-[1px] bg-white border-black">
   <div className="flex items-center justify-center gap-[5px] sm:gap-[10px]">
     <i className="ri-search-line text-normal sm:text-xl"></i>
     <input
