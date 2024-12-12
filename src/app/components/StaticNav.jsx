@@ -195,7 +195,7 @@ const Login = ({ closeOverLay }) => {
           <button className="font-thin" onClick={() => setView("forgotPassword")}>Forgot Password?</button>
           <button className="bg-black text-white text-center text-xl w-[100%] p-2">Log In</button>
           <div className="w-full absolute left-0 bottom-0 py-3 bg-gray-300">
-            <button onClick={() => setView("register")} className="text-gray-800 font-normal">Don't have an account? <span className="text-black font-bold">Register Now</span></button>
+            <button onClick={() => setView("register")} className="text-gray-800 font-normal">Dont have an account? <span className="text-black font-bold">Register Now</span></button>
           </div>
         </form>
       )}
