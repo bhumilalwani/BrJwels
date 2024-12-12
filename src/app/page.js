@@ -16,6 +16,8 @@ import ReasonsToShop from "./components/ReasonsToShop";
 import Gifts from "./components/Gifts";
 import CustomerReview from "./components/CustomerReview";
 import Edit from "./components/Edit";
+import Login from "./components/Login";
+
 
 export default function Home() {
   return (
@@ -39,7 +41,7 @@ export default function Home() {
         <Awards></Awards>
         <LastFooter></LastFooter>
         <FooterLastestStrip></FooterLastestStrip>
-
+        
    </div>
   );
 }
