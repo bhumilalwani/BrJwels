@@ -13,6 +13,16 @@ import BottomSign from "@/app/components/BottomSign";
 import LastFooter from "@/app/components/LastFooter";
 import MostLoved from "@/app/components/MostLoved";
 const ProductPage = () => {
+    
+        const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+      
+        // Mouse move event handler
+        const handleMouseMove = (event) => {
+          setCursorPosition({
+            x: event.clientX,
+            y: event.clientY,
+          });
+        };
   const [activeImage, setActiveImage] = useState(0);
 
   // Default images in case none are provided
@@ -76,6 +86,7 @@ const celebrateWithColor=[
 ]
 const images=[
     "https://assets.angara.com/common-images/gift-box-above-$2000.jpg?width=640&quality=95&width=768&quality=95",
+  
     "https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=640&quality=95&width=768&quality=95",
     "https://cdn-yotpo-images-production.yotpo.com/Review/628007773/612133633/original.jpg?1726934633?width=940&quality=95",
     "https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant_200.jpg?width=940&quality=95&width=768&quality=95",
@@ -108,11 +119,11 @@ const handleNext = () => {
   const [isActive, setIsActive]=useState("")
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white ">
       <StaticNav />
       <DynamicNav />
 
-      <div className="flex flex-col gap-[2vh] mx-auto my-[10vh] px-4 py-4">
+      <div className="flex flex-col gap-[2vh] mx-auto my-[2vh] px-4 py-4">
         <div className="flex items-center gap-2 text-sm text-gray-500">
           <Link href="/" className="hover:text-gray-700">Home</Link>
           <span>/</span>
@@ -123,7 +134,7 @@ const handleNext = () => {
           <span className="text-gray-900">Solitaire Round Diamond Infinity Promise Ring</span>
         </div>
         <div className="md:hidden block">
-<h1 className="text-base font-semibold text-gray-700 ">
+        <h1 className="text-base font-semibold text-gray-700 ">
                 Solitaire Round Diamond Infinity Promise Ring
               </h1>
 
@@ -144,8 +155,8 @@ const handleNext = () => {
       <main className="container mx-auto px-4 pt-8 w-full">
   <div className="flex flex-col md:flex-row gap-6">
     {/* Left Section */}
-    <div className="md:w-[45%] w-full">
-      <div className="relative">
+    <div className="md:w-[45%] xl:w-[65%] w-full">
+      <div className="xl:hidden relative">
         <div className="sticky top-4 aspect-square bg-white">
           {productImages.length > 0 && (
             <img
@@ -211,6 +222,38 @@ const handleNext = () => {
           </svg>
         </button>
       </div>
+     
+            <div className="xl:grid grid-cols-2 gap-2 w-[100%] px-5">
+              {productImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative w-[100%] group"
+                  onMouseMove={handleMouseMove}
+                //   style={{ cursor: 'none' }}
+                >
+                  <img
+                    src={image}
+                    alt={`View ${index + 1}`}
+                    className="w-full h-full fit-contain cursor-crosshair"
+                  />
+                  {/* Custom Cursor */}
+                  {/* <div
+                    className="absolute hidden group-hover:flex bg-gray-300 rounded-full px-4 py-2 border-[1px] border-black"
+                    style={{
+                      top: `${cursorPosition.y}px`,
+                      left: `${cursorPosition.x}px`,
+                      pointerEvents: 'none',
+                      zIndex: 999,
+                      transform: 'translate(-50%, -50%)',
+                    }}
+                  >
+                    <i className="ri-add-large-fill py-1"></i>
+                  </div> */}
+                </div>
+              ))}
+              <SkinToneSlider></SkinToneSlider>
+            </div>
+          
     </div>
 
     {/* Right Section */}
@@ -279,7 +322,6 @@ const handleNext = () => {
         <div className="my-[10vh]">
           <LeftRightSec></LeftRightSec>
   
-
         </div>
         <div>
             <section className="section-gap py-10 bg-white transition-transform duration-500">
@@ -330,7 +372,6 @@ const handleNext = () => {
     </div>
 </div>
 
-
                         {/* Right Arrow */}
                         {/* <button
                             onClick={nextSlide}
@@ -353,7 +394,68 @@ const handleNext = () => {
   );
 };
 
-
+const SkinToneSlider=()=>{
+    const [skinTone, setSkinTone] = useState(0.25)
+  
+    const handleSliderChange = (e) => {
+      setSkinTone(parseFloat(e.target.value))
+    }
+  
+    return (
+      <div className="relative z-10 w-[476px] h-[476px] cursor-crosshair">
+        {/* Main product image */}
+       <div className="relative z-10">
+        {/* Light skin tone overlay */}
+        <div className="absolute top-0 left-0 w-full h-full z-20">
+          <img
+            src="https://assets.angara.com/assets/product/pen-light.jpg?width=1024&quality=95"
+            alt="Light Skin Tone"
+            width={476}
+            height={476}
+          />
+        </div>
+  
+        {/* Dark skin tone overlay */}
+        <div 
+          className="absolute top-0 left-0 w-full h-full z-30 transition-opacity duration-300"
+          style={{ opacity: skinTone }}
+        >
+          <img
+            src="https://assets.angara.com/assets/product/pen-dark.jpg?width=1024&quality=95"
+            alt="Dark Skin Tone"
+            width={476}
+            height={476}
+          />
+        </div>
+        <img 
+        className="absolute z-50 w-[100%] left-0 top-0" alt="7x5mm AAA Blue Sapphire Teardrop Pendant with Diamond in White Gold pen" 
+        srcSet="https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant_400.png?width=940&amp;quality=95&amp;width=360&amp;quality=95 1x, https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant_400.png?width=940&amp;quality=95&amp;width=768&amp;quality=95 2x" 
+        src="https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant_400.png?width=940&amp;quality=95&amp;width=768&amp;quality=95" width="334" height="334" decoding="async" data-nimg="future" loading="eager" 
+        style={{color: "transparent"}} data-uw-rm-alt-original="7x5mm AAA Blue Sapphire Teardrop Pendant with Diamond in White Gold pen" data-uw-rm-alt="ALT"
+        />
+        </div>
+        {/* Vertical slider */}
+        <div className="absolute top-0 right-0 h-full w-3 z-40 flex items-center bg-opacity-25 bg-white p-4 rounded-xl mr-[10px] flex items-center justify-center">
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={skinTone}
+            onChange={handleSliderChange}
+            className="h-full custom-range cursor-ns-resize w-3 appearance-none bg-transparent "
+            style={{
+              WebkitAppearance: 'slider-vertical',
+            //   writing-mode: 'bt-lr',
+            }}
+          />
+        </div>
+     
+      </div>
+    )
+  }
+  
+  
 
 const ProductDetails = () => {
   return (
@@ -477,7 +579,7 @@ const ProductReview = () => {
     )
   }
   
-
+ 
 
 const YouMayALsoLike = () => {
     const [currentIndex, setCurrentIndex] = useState(0);

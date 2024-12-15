@@ -63,7 +63,7 @@ const Birthdays = () => {
                 style={{ width: `${100 / images.length}%` }}
               >
                 <img
-                  className="w-[30%] h-[45%]"
+                  className="w-[20%] scale-75 h-[35%]"
                   src={image.image}
                   alt={`Slide ${index + 1}`}
                 />

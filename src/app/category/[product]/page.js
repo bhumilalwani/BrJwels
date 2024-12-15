@@ -11,25 +11,62 @@ import Awards from '@/app/components/Awards';
 import FooterLastestStrip from '@/app/components/FooterLastestStrip';
 import LastFooter from '@/app/components/LastFooter';
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
+// import required modules
+import { Navigation } from 'swiper/modules';
+
 const Page = () => {
   const params = useParams();
   const [showFilter, setShowFilter] = useState(false);
-  const productImages = [
-    [
-      "https://raymondleejewelers.net/wp-content/uploads/2019/02/custom-design-a-ring-example.jpg",
-      "https://www.brides.com/thmb/kvx0c_MuM_CVlklXFQy0C6-WNrA=/2000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/il_fullxfull.1852208181_6mbc_2400x-a3b790cc79e04e73b00351b79b2008a2.jpg",
-      "https://i.pinimg.com/originals/a6/e9/ba/a6e9bacd8703944b93f9710a5250db75.jpg",
-    ],
-    [
-      "https://i.etsystatic.com/12828076/r/il/6cef40/2347357644/il_fullxfull.2347357644_6pfl.jpg",
-      "https://cdn.shopify.com/s/files/1/0256/7896/3506/products/engagementrings_1024x1024.jpg?v=1597937021",
-      "https://i.etsystatic.com/17210700/r/il/fd0715/4555858865/il_1080xN.4555858865_4lps.jpg",
-    ],
-   
-    
-     
-          
+  const productTitles = [
+   {title:"Lab Grown Diamonds ",
+    price:"$999",
+    images : [
+        "https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr1381opd/8x6mm-aaaa-opal-rose-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr1432d/2.1mm-hsi2-diamond-white-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/lsr4329d/10x8mm-fgvs-lab-grown-diamond-white-gold-ring.jpg?width=414&quality=95",
+      ]
+   },
+   {title:"Lab Grown Diamonds ",
+    price:"$999",
+    images : [
+        "https://assets.angara.com/ring/sr1381opd/8x6mm-aaaa-opal-rose-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr1381opd/8x6mm-aaaa-opal-rose-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr1432d/2.1mm-hsi2-diamond-white-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/lsr4329d/10x8mm-fgvs-lab-grown-diamond-white-gold-ring.jpg?width=414&quality=95",
+      ]
+   },
+   {title:"Lab Grown Diamonds ",
+    price:"$999",
+    images : [
+        "https://assets.angara.com/ring/sr3709ed_h/8.20x6.07x4.20mm-aaa-emerald-white-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr1381opd/8x6mm-aaaa-opal-rose-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr2500fwprd/5mm-aaaa-freshwater-cultured-pearl-yellow-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/lsr4329d/10x8mm-fgvs-lab-grown-diamond-white-gold-ring.jpg?width=414&quality=95",
+      ]
+   },
+   {title:"Lab Grown Diamonds ",
+    price:"$999",
+    images : [
+        "https://assets.angara.com/ring/sr2500fwprd/5mm-aaaa-freshwater-cultured-pearl-yellow-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr1381opd/8x6mm-aaaa-opal-rose-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/sr1432d/2.1mm-hsi2-diamond-white-gold-ring.jpg?width=414&quality=95",
+        "https://assets.angara.com/ring/lsr4329d/10x8mm-fgvs-lab-grown-diamond-white-gold-ring.jpg?width=414&quality=95",
+      ]
+   },
   ];
+
+
+
   const celebrateWithColor=[
     'https://edge.curalate.com/v1/img/6Ygup5L_YdhmBlU_LMIs9cP_O6C66CiHUjwHLT49lXA=/w/300?typ=webp',
     'https://edge.curalate.com/v1/img/qtADTsxIXFY8QboSPSvWxJMNgrRf5MukUQXk4LC1haA=/w/300?typ=webp',
@@ -44,10 +81,10 @@ const Page = () => {
 
 
 ]
-  const [prevState, setPrevState] = useState(productImages);
+  const [prevState, setPrevState] = useState(productTitles);
   const [currentIndex, setCurrentIndex] = useState(0);
   const LoadMoreHandeler = () => {
-    setPrevState((prev) => [...prev, ...productImages]);
+    setPrevState((prev) => [...prev, ...productTitles]);
   };
 
   const toggleFilter = () => {
@@ -69,11 +106,7 @@ const Page = () => {
       name: "gold gem",
       img: "https://i.etsystatic.com/12828076/r/il/6cef40/2347357644/il_fullxfull.2347357644_6pfl.jpg",
     },
-    {
-        id: "4",
-        name: "white gem",
-        img: "https://www.brides.com/thmb/kvx0c_MuM_CVlklXFQy0C6-WNrA=/2000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/il_fullxfull.1852208181_6mbc_2400x-a3b790cc79e04e73b00351b79b2008a2.jpg",
-      },
+   
       {
         id: "5",
         name: "blue gem",
@@ -116,7 +149,7 @@ const Page = () => {
 
       <div className='flex flex-col mt-[5vh] items-start px-[2%]'>
         <div className='flex flex-col sm:flex-row w-[100%] h-[100%] bg-white items-center gap-[1%]'>
-        <div className='flex flex-col w-[95%]'><h2 className='text-gray-800 text-xl font-semibold text-left capitalize'>
+        <div className='flex flex-col w-[95%] ml-10'><h2 className='text-gray-800 text-xl font-semibold text-left capitalize'>
           {/* {params.product} */}
           Rings
         </h2>
@@ -129,47 +162,60 @@ const Page = () => {
             <button className='bg-black text-white mt-[2vh] font-sm px-[10px] py-[5px] mb-[5vh]'>View All Offers</button>
         </div>
         </div>
-        <div className="relative w-[70%]">
+        <div className="relative w-[50%]">
       {/* Left Arrow */}
       
       {/* Slider Container */}
-      <div
-        ref={sliderRef}
-        className="flex items-center scrollbar-hidden h-[100%] 
-                   overflow-x-scroll p-[1vw] gap-3"
-      >
-        <div
-        onClick={handleLeftClick}
-        className=" z-20 p-2 rounded-[5px] 
-                   bg-gradient-to-b from-[rgba(0,0,0,0.65)] to-black 
-                   w-fit h-fit text-gray-400 bg-blend-screen backdrop-blur-2xl opacity-50 
-                   hover:bg-black hover:text-white cursor-pointer"
-      >
-        <i className="ri-arrow-left-line"></i>
-      </div>
+      <div className="relative w-[100%] flex justify-center ">
+  <Swiper
+    centeredSlides={true}
+    navigation={{
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+    }}
+    spaceBetween={0} // Adds space between slides
+    slidesPerView={"3"} // Allows slides to be centered based on their content width
+    modules={[Navigation]}
+    className="mySwiper w-[60%] " // Adjust the width of the Swiper container
+  >
+    {products.map((product) => (
+     <SwiperSlide key={product.id} className="swiperSlide flex justify-center items-center">
+     <Link
+       href={`/productDetails/${product.id}`}
+       className="flex sm:w-[15vw] shrink-0 h-[35vh] items-center relative justify-center"
+     >
+       <div className="w-[100%] h-[100%] overflow-hidden hover:contrast-50 transition duration-300">
+         <img
+           className="w-[90%] h-[100%] transition duration-500" // No hover effects
+           src={product.img}
+           alt={product.name}
+         />
+       </div>
+       <h3 className="absolute top-[78%] text-left ml-[2%] text-lg font-semibold text-gray-200 capitalize">
+         {product.name}
+       </h3>
+     </Link>
+   </SwiperSlide>
+    ))}
+  </Swiper>
+ 
 
-        {products.map((product) => (
-          <Link
-            key={product.id}
-            href={`/productDetails/${product.id}`}
-            className="flex sm:w-[15vw] shrink-0 h-[35vh] items-center relative justify-center"
-          >
-            <div className="w-[100%] h-[100%] overflow-hidden">
-              <img
-                className="w-[100%] h-[100%] hover:brightness-110 hover:scale-125 transform transition duration-500"
-                src={product.img}
-                alt={product.name}
-              />
-            </div>
-            <h3 className="absolute top-[78%] text-left ml-[2%] text-lg font-semibold text-gray-200 capitalize">
-              {product.name}
-            </h3>
-          </Link>
-        ))}
-      </div>
+  {/* Custom Navigation Buttons */}
+  <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+    {/* Custom Previous Button Icon */}
+  
+  </div>
+
+  <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+    {/* Custom Next Button Icon */}
+  
+  </div>
+</div>
+
+
     </div>
           </div>
-          <div className='flex items-center w-[100%] justify-between m-[40%] ml-[0] md:w-[60%] mt-[4vh]'>
+          <div className='flex items-center w-[100%] justify-between ml-[40%] md:w-[60%] mt-[4vh]'>
             <h3 className='text-gray-600 text-xl font-bold'>5394 custom rings</h3>
             <button
               onClick={toggleFilter}
@@ -177,18 +223,33 @@ const Page = () => {
             >
               Filter
             </button>
-            <button className='hover:bg-black hover:text-white duration-500 text-black text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'>
-              Sort By
-            </button></div>
-        <div className='flex relative flex-col mt-[1vh] sm:flex-row items-start gap-2 -mt-[40%] '>
+            <div className='flex '><button className='hover:bg-black hover:text-white duration-500 text-black text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'>
+             <h2>Sort By</h2>
+           
+            </button>  <select className='bg-transparent outline-none'>
+        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
+        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
+        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
+        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
+    </select></div>
+            </div>
+        <div className='flex relative flex-col mt-[1vh] sm:flex-row items-start gap-2 -mt-[0%] '>
           
-          <div className='filter-sort sticky top-20 sm:w-[30%] flex items-center justify-center gap-[5%] sm:gap-[15%] py-[20px] w-[100%]'>
+          <div className='filter-sort sticky sm:w-[30%] flex items-center justify-center gap-[5%] sm:gap-[15%] py-[20px] w-[100%]'>
           
            <FilterSectionForBigScreens className="hidden sm:flex"></FilterSectionForBigScreens>
           </div>
-          <div className='flex flex-col w-[100%] md:w-[72%] items-center mx-auto justify-center'><div className='grid ml-[10%] justify-center grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 p-[1vw] gap-3 mt-[0vh]'>
-            {prevState.map((images, index) => (
-              <ProductItem key={index} images={images} />
+          <div className='flex flex-col w-[100%] md:w-[72%] items-center mx-auto justify-center'>
+            <div className='grid ml-[10%] justify-center grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 p-[1vw] gap-3 mt-[0vh]'>
+            {prevState.map((obj, index) => (
+            <div key={index} className='flex flex-col'>
+                <ProductItem key={index} images={obj.images}/>    {/* Text Section */}
+            <div className="text-left">
+              <h3 className="product-name text-base font-medium">
+                {obj.title}
+              </h3>
+              <span className="price text-md text-gray-700">{obj.price}</span>
+            </div></div>
             ))}
           </div>
           <button
@@ -254,17 +315,12 @@ const Page = () => {
 
 
 
-const ProductItem = () => {
+const ProductItem = ({images}) => {
   // State to track the currently displayed image
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Array of images
-  const images = [
-    "https://assets.angara.com/ring/sr1437d/5.1mm-iji1i2-diamond-p950-platinum-ring.jpg?width=414&quality=95",
-    "https://assets.angara.com/ring/sr1432d/2.1mm-hsi2-diamond-white-gold-ring.jpg?width=414&quality=95",
-    "https://assets.angara.com/ring/sr1432d/2.1mm-hsi2-diamond-white-gold-ring.jpg?width=414&quality=95",
-    "https://assets.angara.com/ring/lsr4329d/10x8mm-fgvs-lab-grown-diamond-white-gold-ring.jpg?width=414&quality=95",
-  ];
+ 
 
   // Handle dot click
   const handleDotClick = (index) => {
@@ -273,52 +329,32 @@ const ProductItem = () => {
 
   return (
     <div className="product-item relative z-0">
-      <div className="product-card flex flex-col items-center space-y-4 p-4">
-        {/* Image Section */}
-        <div className="media relative">
-          <div className="slider-wrapper w-[20vw] h-[30vh] ">
-            <img
-              className="rounded-lg transition-opacity duration-300"
-              alt="Lab-Grown Round Diamond Solitaire Classic Engagement Ring"
-              src={images[currentImageIndex]}
-            />
-          </div>
-          {/* Sticky Dots */}
-          <ul className="slick-dots flex justify-center space-x-2 mt-2 absolute bottom-2 w-full">
-            {images.map((_, index) => (
-              <li
-                key={index}
-                className={`cursor-pointer ${
-                  currentImageIndex === index ? "slick-active" : ""
-                }`}
-                onClick={() => handleDotClick(index)}
-              >
-                <span
-                  className={`custom-dot inline-block w-2 h-2 rounded-full ${
-                    currentImageIndex === index
-                      ? "bg-gray-800"
-                      : "bg-gray-400"
-                  }`}
-                ></span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Text Section */}
-        <div className="text-left">
-          <h3 className="product-name text-base font-medium">
-            Lab-Grown Round Diamond Solitaire Classic Engagement Ring
-          </h3>
-          <span className="price text-md text-gray-700">$1,049 - $3,669</span>
-        </div>
+    <div className="product-card flex flex-col items-center space-y-4 p-4">
+      <div className="media relative w-[80%] lg:w-[60%]">
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper w-full"
+        >
+          {images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <img
+                className="rounded-lg w-full h-auto fit-cover"
+                alt={`Product ${index + 1}`}
+                src={image}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
+  </div>
   );
 };
-
-
-
 
 
 const FilterSection = (props) => {

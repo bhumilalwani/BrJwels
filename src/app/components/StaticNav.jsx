@@ -180,7 +180,7 @@ const Login = ({ closeOverLay }) => {
   const [view, setView] = useState("login");
 
   return (
-    <div className="overlay top-0 text-center left-0 w-[100%] h-[100%] bg-gray-800 z-50 fixed flex items-center justify-center bg-opacity-50">
+    <div className="overlay transition-transform duration-500 top-0 text-center left-0 w-[100%] h-[100%] bg-[#666666] z-50 fixed flex items-center justify-center bg-opacity-50">
       {view === "login" && (
         <form className="flex relative items-start px-[3%] lg:w-[30%] w-[80%] sm:w-[40%] relative h-[50%] bg-gray-100 justify-start pt-[8%] sm:pt-10 gap-5 flex-col">
               <div className="close w-[100%] flex items-start text-sm sm:text-lg cursor-pointer absolute top-2 right-4 justify-end">
@@ -194,7 +194,7 @@ const Login = ({ closeOverLay }) => {
           <input className="p-2 capitalize border-[1px] border-gray-500 w-[100%] bg-gray-100" type="password" placeholder="Password*" />
           <button className="font-thin" onClick={() => setView("forgotPassword")}>Forgot Password?</button>
           <button className="bg-black text-white text-center text-xl w-[100%] p-2">Log In</button>
-          <div className="w-full absolute left-0 bottom-0 py-3 bg-gray-300">
+          <div className="w-full absolute left-0 bottom-0 py-3 bg-[#dddcd9]">
             <button onClick={() => setView("register")} className="text-gray-800 font-normal">Dont have an account? <span className="text-black font-bold">Register Now</span></button>
           </div>
         </form>

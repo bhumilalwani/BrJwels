@@ -57,67 +57,76 @@ const [currentIndex, setCurrentIndex] = useState(0);
       
 
   return (
-    <div className="mt-[10vh] w-full min-h-[60vh] relative py-[5vh] mx-auto sm:px-[5%] flex flex-col pb-[20vh] pt-[40%] md:pt-[20%] bg-[#F5F5F6]">
-      <div className="flex flex-col sm:flex-row w-full lg:h-[66vh] h-[50vh] items-center">
-        <div className="w-full sm:w-[60%] -mt-[10%] flex flex-col ml-[10px] sm:pr-[10px] p-[2vh] sm:pt-[6vh] sm:pb-[5vh] sm:pl-[20vh] items-start justify-start min-h-[100%] h-fit bg-[#F5F5F6]">
-          <h3 className="mb-[1vh] text-lg font-semibold md:-mt-[20%] mt-[25%]">Our 8 Cs Promise</h3>
-          <p className=" mb-[10vh] text-sm">
-            Unlike other e-tailers, we powered a 400-year legacy in gemstones and jewelry-making with cutting-edge
-            technology to make bespoke fine jewelry accessible for the very first time. Without the middlemen, you can
-            count on us to deliver your dream jewelry at high speed, and with 30 percent more value.
-          </p>
-            {/* Buttons Section */}
-      <div className="md:grid hidden grid-cols-2 ml-[50%] -translate-x-[45%] gap-2 sm:gap-1 w-[100%] mx-auto p-2">
-        {videos.map((video, index) => (
+    // <div className="mt-[10vh] w-full min-h-[60vh] relative py-[5vh] mx-auto sm:px-[5%] flex flex-col pb-[20vh] pt-[40%] md:pt-[20%] bg-[#F5F5F6]">
+    //  
+    //   <div className="flex flex-col justify-center items-center -mt-[50%] sm:-mt-[8vh] mx-auto">
+    //   {/* Buttons Section */}
+    //   <div className="grid grid-cols-2 md:hidden mt-[55vw] sm:mt-[0vh] gap-4 sm:gap-4 w-[100%] sm:w-[100%] mx-auto p-2">
+    //     {videos.map((video, index) => (
+    //       <button
+    //         key={video.id}
+    //         className={`flex gap-[5%] items-center relative w-[100%] p-1 rounded-md sm:w-[100%] px-2 transition ${
+    //           index === currentIndex
+    //             ? "bg-gray-300 "
+    //             : "bg-white "
+    //         } hover:bg-gray-400 hover:text-gray-800`}
+    //         onClick={() => setCurrentIndex(index)}
+    //       >
+    //         <img
+    //           src={video.poster}
+    //           alt={video.title}
+    //           className="w-[36px] absolute -left-[10%] h-[40px] sm:w-[46px] md:w-[52px] md:h-[55px] sm:h-[50px] rounded-full mb-2"
+    //         />
+    //         <span className="text-sm sm:text-lg ml-[5vw] font-semibold">{video.title}</span>
+    //       </button>
+    //     ))}
+    //   </div>
+    // </div>
+  
+// 
+
+    // </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 w-[100%] py-8 bg-[#F5F5F6] px-10'>
+ <div className="flex flex-col w-[100%] items-center">
+        
+          <div className='flex flex-col items-start justify-center px-5 mx-auto'>
+            <h3 className="mb-[1vh] text-lg font-semibold mt-[5%] md:mt-[0%]">Our 8 Cs Promise</h3>
+           <p className=" text-sm">
+             Unlike other e-tailers, we powered a 400-year legacy in gemstones and jewelry-making with cutting-edge
+             technology to make bespoke fine jewelry accessible for the very first time. Without the middlemen, you can
+             count on us to deliver your dream jewelry at high speed, and with 30 percent more value.
+           </p></div>
+
+          
+        </div>
+   
+      <div className="mt-[5%] flex items-center justify-start sm:justify-center px-5">
+          <VideoCarousel className="fit-cover" currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
+       
+        </div>
+
+         {/* Buttons Section */}
+      <div className="grid md:-mt-[20%] lg:-mt-[40%] xl:-mt-[60%] grid-cols-2 content-center w-[90%] sm:w-[90%] md:w-[80%] lg:w-[80%] mt-[6%] mx-auto lg:ml-[20%] mr-[2vh]">
+         {videos.map((video, index) => (
           <button
             key={video.id}
-            className={`flex gap-[5%] shrink-0 items-center p-1 mb-2 -mt-[12%] sm:mt-[0%] sm:w-[80%] transition ${
+            className={`flex rounded-[4px] gap-[5%] w-[16vh] pr-10 shrink-0 items-center mb-2 transition ${
               index === currentIndex
                 ? "bg-gray-300 "
                 : "bg-white "
-            } hover:bg-gray-400 hover:text-gray-800`}
+            } hover:bg-gray-200 hover:text-gray-800`}
             onClick={() => setCurrentIndex(index)}
           >
             <img
               src={video.poster}
               alt={video.title}
-              className="w-[40px] h-[40px] mt-2 -ml-[10%] rounded-full mb-2"
+              className="w-[40px] shrink-0 h-[40px] mt-2 -ml-[20%] rounded-full mb-2"
             />
             <span className="text-xs text-gray-600 font-semibold">{video.title}</span>
           </button>
         ))}
       </div>
-        </div>
-        <div className="sm:w-[30%] top-10 h-[100%] absolute sm:left-[65%] sm:top-[30%] md:top-[12%] sm:mt-[0vh] w-[40%] md:flex flex-col items-center gap-[0] justify-center">
-          <VideoCarousel className="fit-cover" currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
-       
-        </div>
-             
-      </div>
-      <div className="flex flex-col justify-center items-center -mt-[50%] sm:-mt-[8vh] mx-auto">
-      {/* Buttons Section */}
-      <div className="grid grid-cols-2 md:hidden mt-[55vw] sm:mt-[0vh] gap-4 sm:gap-4 w-[100%] sm:w-[100%] mx-auto p-2">
-        {videos.map((video, index) => (
-          <button
-            key={video.id}
-            className={`flex gap-[5%] items-center relative w-[100%] p-1 rounded-md sm:w-[100%] px-2 transition ${
-              index === currentIndex
-                ? "bg-gray-300 "
-                : "bg-white "
-            } hover:bg-gray-400 hover:text-gray-800`}
-            onClick={() => setCurrentIndex(index)}
-          >
-            <img
-              src={video.poster}
-              alt={video.title}
-              className="w-[36px] absolute -left-[10%] h-[40px] sm:w-[46px] md:w-[52px] md:h-[55px] sm:h-[50px] rounded-full mb-2"
-            />
-            <span className="text-sm sm:text-lg ml-[5vw] font-semibold">{video.title}</span>
-          </button>
-        ))}
-      </div>
-    </div>
-  
     </div>
   );
 };
@@ -179,7 +188,7 @@ const VideoCarousel = (props) => {
   
   
     return (
-      <div className="relative w-full">
+      <div className="relative w-[75%] lg:w-[75%]">
         {/* Video Player */}
         <div className="relative">
           <video

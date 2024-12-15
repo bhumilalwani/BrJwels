@@ -1,9 +1,16 @@
 'use client';
+
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const MostLoved = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [likedStones, setLikedStones] = useState({});
 
     const birthstones = [
@@ -11,85 +18,91 @@ const MostLoved = () => {
         { name: 'Amethyst', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
         { name: 'Aquamarine', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
         { name: 'Diamond', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Garnet', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Amethyst', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Aquamarine', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Diamond', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
+        { name: 'Emerald', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
+        { name: 'Pearl', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
+        { name: 'Ruby', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
+        { name: 'Peridot', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
     ];
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % birthstones.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? birthstones.length - 1 : prevIndex - 1));
-    };
+    const numberToRemove = Math.floor(birthstones.length / 5); // 1/5th of the array length
+    const slicedBirthstones = birthstones.slice(numberToRemove); // Remove 1/5th of the array
 
     const LikeHandler = (stoneName) => {
         setLikedStones((prevLiked) => ({
             ...prevLiked,
-            [stoneName]: !prevLiked[stoneName], // Toggle liked state
+            [stoneName]: !prevLiked[stoneName],
         }));
     };
 
     return (
-        <div>
-            <section className="section-gap py-10 bg-white transition-transform duration-500">
-                <div className="container mx-auto text-center sm:px-[10vh]">
-                    <h2 className="text-2xl font-normal mb-14">Most Loved On BR</h2>
-                    <div className="relative flex justify-center items-center">
-                        {/* Left Arrow */}
-                        {/* <button
-                            onClick={prevSlide}
-                            className="absolute left-0 text-gray-800 text-2xl rounded-full p-2 z-10"
+        <div className="bg-white">
+            <section className="py-10 px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto">
+                    <h2 className="text-2xl font-normal mb-8 text-center">Most Loved On BR</h2>
+
+                    <div className="relative">
+                        <Swiper
+                            slidesPerView={1}
+                            spaceBetween={20}
+                            
+                            navigation={{
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            }}
+                            modules={[Pagination, Navigation]}
+                            breakpoints={{
+                                480: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10,
+                                },
+                                768: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 20,
+                                },
+                                1024: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 30,
+                                }
+                            }}
+                            className="mySwiper"
                         >
-                            &lt;
-                        </button> */}
-
-                        {/* Slider */}
-                        <div className="relative w-[80%] overflow-hidden">
-    <div
-        className="flex transition-transform ease-in-out overflow-x-scroll scrollbar-hidden duration-500 gap-[20px]"
-        style={{
-            transform: `translateX(-${currentIndex * 80}px)`,
-        }}
-    >
-        {birthstones.map((stone, index) => (
-            <Link href="/productDetails/hsbcs" key={index}>
-                <div className="relative group w-[300px] h-[350px] text-left bg-white px-[6%] sm:px-10 rounded-lg hover:shadow-lg">
-                    <img
-                        src={stone.image}
-                        alt={stone.name}
-                        className="sm:w-24 sm:h-24 transition-transform duration-500 w-[40%] h-[20%] rounded-full mx-auto mb-4"
-                    />
-                    <i
-                        onClick={() => LikeHandler(stone.name)}
-                        className={`absolute right-[8%] top-[5%] cursor-pointer font-extralight text-lg ${
-                            likedStones[stone.name]
-                                ? 'ri-heart-fill text-black-700' // Filled heart
-                                : 'ri-heart-line text-gray-500' // Outlined heart
-                        }`}
-                    ></i>
-                    <p className="font-semibold">{stone.name}</p>
-                    <p className="text-gray-500 text-sm">Birthstone description</p>
-                    <h3>$1,999.9</h3>
-                    <button className="group-hover:block hidden sm:px-[50px] px-[30px] mt-[4vh] py-[8px] border-[1.5px] border-solid border-black whitespace-nowrap">
-                        Customize Now
-                    </button>
-                </div>
-            </Link>
-        ))}
-    </div>
-</div>
-
-
-                        {/* Right Arrow */}
-                        {/* <button
-                            onClick={nextSlide}
-                            className="absolute right-0 text-gray-800 text-2xl p-2 z-10"
-                        >
-                            &gt;
-                        </button> */}
+                            {slicedBirthstones.map((stone, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className="relative group text-left hover:shadow-lg p-4">
+                                        <Link href="/productDetails/hsbcs" className="block">
+                                            <img
+                                                src={stone.image}
+                                                alt={stone.name}
+                                                className="w-full h-auto object-cover mb-4 transition-transform duration-500 transform hover:scale-105"
+                                            />
+                                            <div className="absolute right-6 top-6">
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        LikeHandler(stone.name);
+                                                    }}
+                                                    className="bg-white rounded-full p-2 shadow-md"
+                                                >
+                                                    <i
+                                                        className={`${
+                                                            likedStones[stone.name]
+                                                                ? 'ri-heart-fill text-red-500'
+                                                                : 'ri-heart-line text-gray-500'
+                                                        } text-xl`}
+                                                    ></i>
+                                                </button>
+                                            </div>
+                                            <h3 className="font-semibold text-lg">{stone.name}</h3>
+                                            <p className="text-gray-500 text-sm mb-2">Birthstone description</p>
+                                            <p className="font-bold text-lg">$1,999.9</p>
+                                        </Link>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                        <div className="swiper-pagination absolute bottom-0 left-0 w-full text-center py-4"></div>
+                        <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-md"></div>
+                        <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-md"></div>
                     </div>
                 </div>
             </section>
