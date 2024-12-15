@@ -165,9 +165,7 @@ const handleNext = () => {
               className="w-full h-full object-contain"
             />
           )}
-        </div>
-
-        {/* Thumbnail Buttons */}
+            {/* Thumbnail Buttons */}
         <div className="flex mt-4 gap-2 overflow-x-scroll scrollbar-hidden">
           {productImages.map((image, index) => (
             <button
@@ -186,6 +184,9 @@ const handleNext = () => {
           ))}
         </div>
 
+        </div>
+
+      
         {/* Navigation Buttons */}
         <button
           onClick={() =>
@@ -223,7 +224,7 @@ const handleNext = () => {
         </button>
       </div>
      
-            <div className="xl:grid grid-cols-2 gap-2 w-[100%] px-5">
+            <div className="hidden xl:grid grid-cols-2 gap-2 w-[100%] px-5">
               {productImages.map((image, index) => (
                 <div
                   key={index}
@@ -402,7 +403,7 @@ const SkinToneSlider=()=>{
     }
   
     return (
-      <div className="relative z-10 w-[476px] h-[476px] cursor-crosshair">
+      <div className="relative hidden xl:block z-10 w-[476px] h-[476px] cursor-crosshair">
         {/* Main product image */}
        <div className="relative z-10">
         {/* Light skin tone overlay */}

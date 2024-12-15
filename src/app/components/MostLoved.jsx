@@ -73,7 +73,7 @@ const MostLoved = () => {
                                             <img
                                                 src={stone.image}
                                                 alt={stone.name}
-                                                className="w-full h-auto object-cover mb-4 transition-transform duration-500 transform hover:scale-105"
+                                                className="w-full scale-75 h-auto object-cover mb-4 transition-transform duration-1000 transform hover:scale-100"
                                             />
                                             <div className="absolute right-6 top-6">
                                                 <button
@@ -101,8 +101,8 @@ const MostLoved = () => {
                             ))}
                         </Swiper>
                         <div className="swiper-pagination absolute bottom-0 left-0 w-full text-center py-4"></div>
-                        <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-md"></div>
-                        <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-md"></div>
+                        <div className="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white p-3 shadow-md"></div>
+                        <div className="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white p-3 shadow-md"></div>
                     </div>
                 </div>
             </section>

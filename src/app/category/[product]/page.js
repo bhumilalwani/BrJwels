@@ -149,11 +149,11 @@ const Page = () => {
 
       <div className='flex flex-col mt-[5vh] items-start px-[2%]'>
         <div className='flex flex-col sm:flex-row w-[100%] h-[100%] bg-white items-center gap-[1%]'>
-        <div className='flex flex-col w-[95%] ml-10'><h2 className='text-gray-800 text-xl font-semibold text-left capitalize'>
+        <div className='flex flex-col w-[95%] ml-5'><h2 className='text-gray-800 text-xl font-semibold text-left capitalize'>
           {/* {params.product} */}
           Rings
         </h2>
-        <p className='text-sm mt-[1vh] font-semibold text-gray-500 '>
+        <p className='text-sm mt-[1vh] font-semibold text-gray-500 mb-5'>
           Make a statement wherever you go with handcrafted rings from Angara.
           From &quot;love tokens to outfit pick-me-ups, we have got them all. Get exploring
         </p>
@@ -162,7 +162,7 @@ const Page = () => {
             <button className='bg-black text-white mt-[2vh] font-sm px-[10px] py-[5px] mb-[5vh]'>View All Offers</button>
         </div>
         </div>
-        <div className="relative w-[50%]">
+        <div className="relative w-[100%] sm:w-[50%]">
       {/* Left Arrow */}
       
       {/* Slider Container */}
@@ -173,10 +173,29 @@ const Page = () => {
       prevEl: '.swiper-button-prev',
       nextEl: '.swiper-button-next',
     }}
-    spaceBetween={0} // Adds space between slides
-    slidesPerView={"3"} // Allows slides to be centered based on their content width
+    spaceBetween={2}
+    slidesPerView={3} // Default slides per view
+                        // Space between slides
+    breakpoints={{
+  750: {
+    slidesPerView:3,
+  },
+    640: {
+      slidesPerView: 2, // 2 slides on screens larger than 768px
+    },
+    500:{
+        slidesPerView:2,
+    },
+    400:{
+        slidesPerView:1,
+    },
+    0: {
+      slidesPerView: 1, // 1 slide on screens larger than 480px
+    },
+  }} // Adds space between slides
+    // Allows slides to be centered based on their content width
     modules={[Navigation]}
-    className="mySwiper w-[60%] " // Adjust the width of the Swiper container
+    className="mySwiperCategoryTop w-[60%] " // Adjust the width of the Swiper container
   >
     {products.map((product) => (
      <SwiperSlide key={product.id} className="swiperSlide flex justify-center items-center">
@@ -215,7 +234,7 @@ const Page = () => {
 
     </div>
           </div>
-          <div className='flex items-center w-[100%] justify-between ml-[40%] md:w-[60%] mt-[4vh]'>
+          <div className='flex items-center w-[100%] justify-between md:ml-[40%] md:w-[60%] mt-[4vh]'>
             <h3 className='text-gray-600 text-xl font-bold'>5394 custom rings</h3>
             <button
               onClick={toggleFilter}
@@ -223,7 +242,7 @@ const Page = () => {
             >
               Filter
             </button>
-            <div className='flex '><button className='hover:bg-black hover:text-white duration-500 text-black text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'>
+            <div className='flex flex-col sm:flex-row'><button className='hover:bg-black hover:text-white duration-500 text-black text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'>
              <h2>Sort By</h2>
            
             </button>  <select className='bg-transparent outline-none'>
@@ -261,9 +280,9 @@ const Page = () => {
         </div>
       </div>
       {showFilter ? <FilterSection setShowFilter={setShowFilter}/> : null}
-      <div className="w-[100%] flex flex-col items-center sm:mt-[10vh] px-4">
+      <div className="w-[100%] flex flex-col items-center sm:mt-[10vh] ">
       <h2 className="font-semibold text-2xl">#CelebrateWithColor</h2>
-      <p className="text-gray-600 mt-2">
+      <p className="text-gray-600 mt-2 px-4">
         Keep up with @Brjewelry making colorful noise in the world.
       </p>
       <div className="relative w-[80%] overflow-x-scroll scrollbar-hidden mt-6">
@@ -329,7 +348,7 @@ const ProductItem = ({images}) => {
 
   return (
     <div className="product-item relative z-0">
-    <div className="product-card flex flex-col items-center space-y-4 p-4">
+    <div className="product-card flex flex-col items-center space-y-4 p-2">
       <div className="media relative w-[80%] lg:w-[60%]">
         <Swiper
           spaceBetween={0}
@@ -343,7 +362,7 @@ const ProductItem = ({images}) => {
           {images.map((image, index) => (
             <SwiperSlide key={index}>
               <img
-                className="rounded-lg w-full h-auto fit-cover"
+                className="rounded-lg w-full pb-5 h-auto fit-cover"
                 alt={`Product ${index + 1}`}
                 src={image}
               />

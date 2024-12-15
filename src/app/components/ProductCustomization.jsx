@@ -62,6 +62,23 @@ const ProductCustomization = () => {
         <h3 className="text-sm font-medium mb-4">Total Carat Weight: 1 Ct</h3>
         <Swiper
   slidesPerView={6}
+  breakpoints={
+    {0:{
+        slidesPerView: 1,
+       
+      },
+      400:{
+        slidesPerView:3,
+      },
+      450:{
+        slidesPerView:4,
+      },
+      550:{
+        slidesPerView:8
+      }
+      }
+    }
+  
 //   centeredSlides={true}
   spaceBetween={0}
   navigation={true}
@@ -69,7 +86,7 @@ const ProductCustomization = () => {
   className="mySwiper swiperProdCust"
 >
   {["1/8 Ct", "1/4 Ct", "1/2 Ct", "1 Ct", "1.5 Ct","1.2 Ct", "1.5 Ct","1.2 Ct", "1.5 Ct"].map((carat) => (
-    <SwiperSlide className="swiper " key={carat}>
+    <SwiperSlide className="swiper" key={carat}>
       <button
         onClick={() => setSelectedCarat(carat)}
         className={`p-2 w-[75px] mb-1 border rounded-md h-[80px] ${
@@ -96,6 +113,22 @@ const ProductCustomization = () => {
         <h3 className="text-sm font-medium mb-4">Metal Type: Platinum</h3>
         <Swiper
   slidesPerView={8}
+    breakpoints={
+    {0:{
+        slidesPerView: 1,
+       
+      },
+      400:{
+        slidesPerView:3,
+      },
+      450:{
+        slidesPerView:4,
+      },
+      550:{
+        slidesPerView:8
+      }
+      }
+    }
 //   centeredSlides={true}
   spaceBetween={0}
   navigation={true}
@@ -103,10 +136,10 @@ const ProductCustomization = () => {
   className="mySwiper swiperProdCust"
 >
   {["Silver", "Gold", "Rose Gold", "Rose Gold","White Gold", "Rose Gold","Rose Gold", "Yellow Gold"].map((carat) => (
-    <SwiperSlide className="swiper " key={carat}>
+    <SwiperSlide className="swiper  " key={carat}>
       <button
         onClick={() => setSelectedCarat(carat)}
-        className={`p-2 w-[40px] mb-1 border rounded-md h-[40px] ${
+        className={`p-2 w-[40px] shrink-0 mb-1 border rounded-md h-[40px] ${
           selectedCarat === carat
             ? "border-gray-600"
             : "border-gray-200"

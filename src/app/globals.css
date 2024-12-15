@@ -118,12 +118,21 @@ body {
 
   width: 16px !important;
   height: 16px !important;
+  background: hsla(0, 0%, 0%, 0.454);
+  padding: 16px;
+
+  
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 20px !important;
-  color: rgb(77, 75, 75) !important;
+  color: black !important;
+  font-weight: 700;
+  
 }
 
-
+.mySwiperCategoryTop-button-next::after,
+.mySwiperCategoryTop-button-prev::after{
+    margin-top: 100%;
+}
