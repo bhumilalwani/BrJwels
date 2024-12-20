@@ -135,7 +135,8 @@ const CustomerReview = () => {
         modules={[Zoom, Navigation, Pagination]}
         className="mySwiper"
       >{reviews.map((review, index) => (
-        <SwiperSlide><div
+        <SwiperSlide key={index}>
+                <div
                       key={index}
                       className="review-card-wrapper flex-shrink-0 w-72 sm:w-80 h-auto bg-white shadow-lg rounded-lg p-4 flex flex-col items-center justify-center snap-center"
                     >

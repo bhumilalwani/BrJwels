@@ -21,7 +21,7 @@ const SidebarNav = () => {
     <nav className="hidden lg:block w-64 bg-[var(--background-color)] ml-[10vh] p-6 h-fit py-6 sticky top-[10%]">
       <ul className="space-y-3">
         {navItems.map((item, index) => (
-          <li kkey={index}>
+          <li key={index}>
             <Link href={item.href} className="text-gray-600 hover:text-gray-900">
               {item.title}
             </Link>
