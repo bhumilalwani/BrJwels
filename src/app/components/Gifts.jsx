@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Gifts = () => {
   return (
     <div className='px-[2vw] pb-[10vh]'>
-      <h2 className="text-center text-xl text-gray-800 sm:text-2xl font-semibold m-[2vw]">Gifts That Say It All</h2>
+      <h2 className="text-center text-xl text-[var(--headings-color)] sm:text-2xl font-semibold m-[2vw]">Gifts That Say It All</h2>
       <div className='flex items-center justify-center gap-4 sm:gap-6 lg:gap-10 flex-wrap px-[5vw]'>
         {Array.from({ length: 4 }).map((_, index) => (
           <div key={index} className='flex flex-col items-center'>
@@ -15,11 +15,11 @@ const Gifts = () => {
                 alt="Gift Image"
               />
             </div>
-            <h3 className='text-gray-500 mt-2 text-sm sm:text-base'>Over $2,500</h3>
+            <h3 className='text-[var(--primary-800)] mt-2 text-sm sm:text-base'>Over $2,500</h3>
           </div>
         ))}
         <div className='text-center -mt-2 ml-[2vw] w-full'>
-          <Link href='/' className='underline text-gray-500 text-sm sm:text-base'>View All Gifts</Link>
+          <Link href='/' className='underline text-[var(--primary-800)] text-sm sm:text-base'>View All Gifts</Link>
         </div>
       </div>
     </div>

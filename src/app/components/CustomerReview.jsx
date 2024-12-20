@@ -1,6 +1,17 @@
-import React from 'react';
+'use client'
+import React, { useRef, useState } from 'react';
 import Link from 'next/link'; // Ensure to import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/zoom';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Zoom, Navigation, Pagination } from 'swiper/modules';
 const reviews = [
   {
     title: 'Beautiful!',
@@ -94,15 +105,37 @@ const CustomerReview = () => {
       <div className="container text-center px-4 sm:px-8">
         <div className="inner-container">
           <div className="section-heading mb-8">
-            <h2 className="sm:text-2xl text-gray-800 text-xl font-semibold mb-2">What Customers Are Saying</h2>
+            <h2 className="sm:text-2xl text-[var(--headings-color)] text-xl font-semibold mb-2">What Customers Are Saying</h2>
            
           </div>
           <div className="review-block">
             <div className="slick-slider" dir="ltr">
               <div className="slick-list flex items-center justify-center">
                 <div className="slick-track flex gap-6 overflow-x-auto scrollbar-hidden snap-x snap-mandatory">
-                  {reviews.map((review, index) => (
-                    <div
+                <Swiper
+        style={{
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
+        }}
+        zoom={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        navigation={true}
+       breakpoints={{
+        1000:{
+            slidesPerView:3,
+        },
+        550:{
+            slidesPerView:2
+        },
+        0:{
+            slidesPerView:1
+        }
+       }}
+        modules={[Zoom, Navigation, Pagination]}
+        className="mySwiper"
+      >{reviews.map((review, index) => (
+        <SwiperSlide><div
                       key={index}
                       className="review-card-wrapper flex-shrink-0 w-72 sm:w-80 h-auto bg-white shadow-lg rounded-lg p-4 flex flex-col items-center justify-center snap-center"
                     >
@@ -114,24 +147,24 @@ const CustomerReview = () => {
                           loading="lazy"
                         />
                       </Link>
-                      <div className="title text-lg font-medium">{review.title}</div>
+                      <div className="title text-lg text-[var(--headings-color)] font-medium">{review.title}</div>
                       <div className="review-stars my-2">
                         <div className="star-rating">
-                          <span className="half-star text-yellow-400">★★★★★</span>
-                          <span className="full-star text-yellow-400" style={{ width: '100%' }}>
+                          <span className="half-star text-[var(--gold)]">★★★★★</span>
+                          {/* <span className="full-star text-[var(--gold)]" style={{ width: '100%' }}>
                             ★★★★★
-                          </span>
+                          </span> */}
                         </div>
                       </div>
-                      <div className="customer-review text-gray-600 text-sm text-center">
+                      <div className="customer-review text-[var(--primary-800)] text-sm text-center">
                         {review.description}
                       </div>
-                      <div className="customer-name text-gray-700 font-semibold mt-4">
+                      <div className="customer-name text-[var(--primary-800)] font-semibold mt-4">
                         {review.customerName}{' '}
-                        <span className="text-gray-500 text-sm">({review.reviewDate})</span>
+                        <span className="text-[var(--primary-800)] text-sm">({review.reviewDate})</span>
                       </div>
-                    </div>
-                  ))}
+                    </div></SwiperSlide>
+                  ))}</Swiper>
                 </div>
               </div>
             </div>

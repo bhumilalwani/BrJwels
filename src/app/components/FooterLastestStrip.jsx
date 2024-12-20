@@ -38,16 +38,16 @@ const FooterLastestStrip = ({bg}) => {
     <div className='w-full flex flex-col mt-[5vh] lg:flex-row items-center justify-between gap-[20px] sm:px-[10vw] flex-wrap'>
     <div className='flex items-center justify-center gap-[2px]'>
         <img className='w-[40px] h-[30px]' src="https://www.freeiconspng.com/uploads/us-flag-icon-5.png" alt="" />
-        <Link className='flex-nowrap text-sm underline mr-[10px]' href='/'>UNITED STATES </Link>
+        <Link className='flex-nowrap text-sm text-[var(--headings-color)] underline mr-[10px]' href='/'>UNITED STATES </Link>
     </div>
-    <div className='flex items-center justify-center gap-[0px] flex-wrap sm:gap-[10px] sm:gap-[20px] justify-center'>
+    <div className='flex items-center text-[var(--headings-color)] justify-center gap-[0px] flex-wrap sm:gap-[10px] sm:gap-[20px] justify-center'>
         <Link href='/'>Education</Link>
         <span> | </span>
         <Link href='/'>Site Map</Link>
         <span> | </span>
-        <Link href='/'>Privacy Policy</Link>
+        <Link href='/privacyPolicy'>Privacy Policy</Link>
         <span> | </span>
-        <Link href='/'>T&C</Link>
+        <Link href='/TermsAndConds'>T&C</Link>
         <span> | </span>
         <Link href='/'>Do Not Sell My Personal Information</Link>
         <span> | </span>
@@ -55,7 +55,7 @@ const FooterLastestStrip = ({bg}) => {
     </div>
 </div>
 
-<div className='cursor-pointer w-[100%] mt-[2vw] py-[10px] text-center text-gray-700 h-[8vh] bg-[#E7E7E9]'>
+<div className='cursor-pointer w-[100%] mt-[2vw] py-[10px] text-center text-[var(--primary-800)] h-[8vh] bg-[var(--background-color)]'>
             &copy;  2024 BR Inc. All Rights Reserved
 </div>
 

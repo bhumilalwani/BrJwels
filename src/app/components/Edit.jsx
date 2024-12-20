@@ -51,7 +51,7 @@ const Edit = () => {
     <section className="py-12" data-section="The Edit">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-normal">The Edit</h2>
+          <h2 className="text-3xl text-[var(--headings-color)] font-normal">The Edit</h2>
         </div>
 
         {/* Container for horizontal scrolling */}
@@ -65,15 +65,15 @@ const Edit = () => {
                   alt={item.altText}
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold truncate">{item.title}</h3>
-                  <span className="group-hover:text-blue-500 text-gray-500 font-medium">Read & Shop</span>
+                  <h3 className="text-lg text-[var(--primary-color)] font-semibold truncate">{item.title}</h3>
+                  <span className=" text-gray-500 font-medium transition-transform duration-500 hover:underline">Read & Shop</span>
                 </div>
               </Link>
             </div>
           ))}
         </div>
       </div>
-      <div className='flex items-center justify-center mt-[2%]'><button className='border-[1px] border-black px-[14%] py-[5%] sm:px-[4%] sm:py-[0.5%]'>Read More</button></div>
+      <div className='flex items-center justify-center mt-[2%]'><button className='border-[1px] border-[var(--headings-color)] text-[var(--headings-color)] px-[14%] py-[5%] sm:px-[4%] sm:py-[0.5%]'>Read More</button></div>
     </section>
   );
 };

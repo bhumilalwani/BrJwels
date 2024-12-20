@@ -40,7 +40,7 @@ const DynamicNav = () => {
               onMouseEnter={() => handleMouseEnter(text)}
               key={index}
               href="/category/ring"
-              className="custom-underline relative inline-block text-black text-[14px] font-semibold hover:text-black hover:no-underline group"
+              className="custom-underline relative inline-block text-[var(--headings-color)] text-[14px] font-semibold hover:text-var(--headings-color) hover:no-underline group"
             >
               {text}
             </Link>
@@ -87,7 +87,7 @@ const DynamicNav = () => {
               {
                 name: "Natural Gem Stones",
                 items: [
-                    { img: "https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
+                    { img:"https://freepngimg.com/thumb/jewellery/49104-4-ruby-hd-download-free-image.png", title: "Red Sapphire Rings" },
                      {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/november.jpg?width=128&quality=95", title:"Citrine Rings"},
                     {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/october.jpg?width=128&quality=95", title:"Opal Rings"},
                     {img:"https://assets.angara.com/assets/homepage-Assets/us/birthstones/june.jpg?width=128&quality=95", title:"Pearl Rings"},
@@ -142,25 +142,25 @@ const DynamicNav = () => {
   <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[2vw] items-start w-[80%]">
     {categories.map((category, index) => (
       <div key={index} className="item col-auto flex flex-col items-start justify-start">
-        <h3 className='font-semibold text-base text-gray-700 mb-[2.5vh]'>{category.name}</h3>
+        <h3 className='font-semibold text-base text-[var(--headings-color)] mb-[2.5vh]'>{category.name}</h3>
         {category.items.map((item, idx) => (
           <div key={idx} className="flex items-center justify-start gap-[5px] mb-[2vh]">
             <img className="w-[20px] h-[20px]" src={item.img} alt={item.title} />
-            <h4 className='font-normal text-sm text-gray-900 '>{item.title}</h4>
+            <h4 className='font-normal text-sm text-[var(--primary-color)] '>{item.title}</h4>
           </div>
         ))}
-        <Link className="underline hover:text-[#CAA968]" href="/category/ring">
+        <Link className="underline transition text-[var(--primary-800)] duration-200 hover:text-[var(--secondary-color)]" href="/category/ring">
           Explore All
         </Link>
       </div>
     ))}
   </div>
   <div className=''>
-    <h3 className='font-semibold text-base text-gray-700 mb-[2.5vh] w-[20%]'>Featured Gift</h3>
+    <h3 className='font-semibold text-base text-[var(--headings-color)] mb-[2.5vh] w-[20%]'>Featured Gift</h3>
     <div className='w-[14vw] relative h-[26vh] overflow-hidden'>
       <img className='fit-cover hover:scale-150 transition-transform transition duration-500 w-[100%] h-[100%]' src="https://assets.angara.com/assets/gnb-assets/ring-banner.jpg?width=768&quality=95" alt="featured item" />
     </div>
-    <Link href="/explore">Explore All</Link>
+    <Link className='text-[var(--primary-800)]' href="/explore">Explore All</Link>
   </div>
 </div>
       );
@@ -181,7 +181,7 @@ const DynamicNav = () => {
                         return (
                             <div key={edit.id} className='w-[19vw] overflow-hidden h-[40vh] flex items-center justify-start relative gap-[10px]'>
                                 <img className='hover-scale-125 w-[100%] h-[100%] h-[100%] fit-cover w-[100%] ' src={edit.img} alt={edit.title} />
-                                <div className='font-normal absolute text-xl backdrop-blur-xl w-[100%] h-[20%] top-[80%] left-[0%] opacity-1/2 text-gray-900'><span className='ml-[10%]'>{edit.title}</span></div>
+                                <div className='font-normal absolute text-xl backdrop-blur-xl w-[100%] h-[20%] top-[80%] left-[0%] opacity-1/2 text-var(--primary-color)'><span className='ml-[10%]'>{edit.title}</span></div>
                             </div>
                         )
                     })

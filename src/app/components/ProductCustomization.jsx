@@ -30,7 +30,7 @@ const ProductCustomization = () => {
               src="https://purepng.com/public/uploads/medium/purepng.com-sapphire-gem-stonesapphiregemstonemineral-corundumaluminium-oxideblue-in-colorfancysapphires-1701528980430ruv6y.png"
               alt="Sapphire"
             />
-            <h4 className="text-xs text-gray-600">Premium</h4>
+            <h4 className="text-xs text-[var(--primary-800)]">Premium</h4>
           </div>
           <div className="flex flex-col items-start px-2">
             <h3 className="bg-[#FBF4E6] px-2 border-[0.6px] border-gray-300 whitespace-nowrap mb-5">
@@ -49,7 +49,7 @@ const ProductCustomization = () => {
                       src="https://purepng.com/public/uploads/medium/purepng.com-sapphire-gem-stonesapphiregemstonemineral-corundumaluminium-oxideblue-in-colorfancysapphires-1701528980430ruv6y.png"
                       alt="Sapphire"
                     />
-                    <h4 className="text-xs text-gray-600">Premium</h4>
+                    <h4 className="text-xs text-[var(--primary-800)]">Premium</h4>
                   </div>
                 ))}
             </div>
@@ -59,7 +59,7 @@ const ProductCustomization = () => {
 
       {/* Total Carat Weight Section */}
       <div>
-        <h3 className="text-sm font-medium mb-4">Total Carat Weight: 1 Ct</h3>
+        <h3 className="text-sm text-[var(--headings-color)] font-medium mb-4">Total Carat Weight: 1 Ct</h3>
         <Swiper
   slidesPerView={6}
   breakpoints={
@@ -91,16 +91,16 @@ const ProductCustomization = () => {
         onClick={() => setSelectedCarat(carat)}
         className={`p-2 w-[75px] mb-1 border rounded-md h-[80px] ${
           selectedCarat === carat
-            ? "border-gray-600"
+            ? "border-[var(--headings-color)]"
             : "border-gray-200"
         }`}
       >
         <img className="h-[30px]" src="https://assets.angara.com/pendant/sp1084sd/5mm-aaa-blue-sapphire-white-gold-pendant.jpg?width=940&quality=95&width=768&quality=95" alt="" />
-        <div className="text-xs -mt-[1vh]">{carat}</div>
+        <div className="text-xs text-[var(--headings-color)] -mt-[1vh]">{carat}</div>
        
       </button>
       {carat === "1 Ct" && (
-          <div className="text-xs text-[#C48C1F] ">Popular</div>
+          <div className="text-xs text-[var(--gold)] ">Popular</div>
         )}
     </SwiperSlide>
   ))}
@@ -110,7 +110,7 @@ const ProductCustomization = () => {
 
       {/* Metal Type Section */}
       <div>
-        <h3 className="text-sm font-medium mb-4">Metal Type: Platinum</h3>
+        <h3 className="text-sm font-medium mb-4 text-[var(--headings-color)]">Metal Type: Platinum</h3>
         <Swiper
   slidesPerView={8}
     breakpoints={
@@ -133,7 +133,7 @@ const ProductCustomization = () => {
   spaceBetween={0}
   navigation={true}
   modules={[Pagination, Navigation]}
-  className="mySwiper swiperProdCust"
+  className="mySwiper text-[var(--headings-color)] swiperProdCust"
 >
   {["Silver", "Gold", "Rose Gold", "Rose Gold","White Gold", "Rose Gold","Rose Gold", "Yellow Gold"].map((carat) => (
     <SwiperSlide className="swiper  " key={carat}>
@@ -141,7 +141,7 @@ const ProductCustomization = () => {
         onClick={() => setSelectedCarat(carat)}
         className={`p-2 w-[40px] shrink-0 mb-1 border rounded-md h-[40px] ${
           selectedCarat === carat
-            ? "border-gray-600"
+            ? "border-black"
             : "border-gray-200"
         }`}
       >
@@ -150,7 +150,7 @@ const ProductCustomization = () => {
        
       </button>
       {carat === "1 Ct" && (
-          <div className="text-xs text-[#C48C1F] ">Popular</div>
+          <div className="text-xs text-[var(--gold)] ">Popular</div>
         )}
         <div className="text-xs ">{carat}</div>
     </SwiperSlide>
@@ -162,7 +162,7 @@ const ProductCustomization = () => {
       {/* Select Size Section */}
       <div>
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-sm font-medium">Select Size</h3>
+          <h3 className="text-sm font-medium text-[var(--headings-color)]">Select Size</h3>
           <button className="text-sm text-blue-600">Size Guide</button>
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hidden">
@@ -170,7 +170,7 @@ const ProductCustomization = () => {
             <button
               key={size}
               onClick={() => setSelectedSize(size)}
-              className={`min-w-[48px] h-12 border rounded-md flex items-center justify-center ${
+              className={`min-w-[48px] text-[var(--headings-color)] h-12 border rounded-md flex items-center justify-center ${
                 selectedSize === size
                   ? "border-gray-800 bg-gray-50"
                   : "border-gray-200"
@@ -182,7 +182,7 @@ const ProductCustomization = () => {
         </div>
       </div>
       <div className="header flex items-center justify-start gap-[60%] pr-5">
-  <span className="explore-heading">
+  <span className="explore-heading text-[var(--headings-color)]">
     Explore Gemstones <span className="new">NEW</span>
   </span>
   <div className="gemstone flex" data-section="'cat prod gemchange'">

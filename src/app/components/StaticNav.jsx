@@ -100,9 +100,9 @@ const StaticNav = () => {
         <div className="flex items-center justify-between bg-white px-[12px] sm:px-[26px] py-[32px]">
           {/* Hamburger Menu */}
           <div className="flex xl:hidden items-center">
-            <i onClick={menuHandler} className="ri-menu-2-line text-2xl sm:text-4xl text-gray-700 cursor-pointer"></i>
+            <i onClick={menuHandler} className="ri-menu-2-line text-2xl sm:text-4xl text-[var(--primary-800)] cursor-pointer"></i>
           </div>
-        <div className='flex items-center justify-center gap-1 hidden xl:flex'>24/7 Customer Support<span> | </span><span className='hover:text-[#B48528] cursor-pointer'>+1-844-527-4367</span></div>
+        <div className='flex items-center justify-center gap-1 hidden xl:flex text-[var(--primary-800)]'>24/7 Customer Support<span> | </span><span className='hover:text-[var(--secondary-color)] cursor-pointer'>+1-844-527-4367</span></div>
           {/* Logo */}
           <div className="logo ml-[5px] ">
             <Link href="/" className="text-2xl font-semibold cursor-pointer">BR JEW.</Link>
@@ -111,17 +111,25 @@ const StaticNav = () => {
      
 
           {/* Icons */}
-          <div className="flex items-center justify-center gap-[5px] sm:gap-[15px] pl-[5px]">
+          <div className="flex items-center text-[var(--primary-800)] justify-center gap-[5px] sm:gap-[15px] pl-[5px]">
                  {/* Search Bar for Large Screens */}
-          <div className="hidden sm:flex items-center justify-center w-fit px-[10px] py-[5px] rounded-[2px] border-[1px] bg-white border-black">
+          <div className="hidden sm:flex items-center justify-center w-fit px-[10px] py-[5px] rounded-[2px] border-[1px] bg-white border-[var(--headings-color)]">
             <div className="flex items-center justify-center gap-[5px] sm:gap-[10px]">
               <i className="ri-search-line text-normal sm:text-xl"></i>
               <input className="outline-none capitalize text-normal sm:text-xl font-normal rounded-md" type="text" placeholder="Search..." />
             </div>
           </div>
-            <i onClick={openOverLay} className="hover:-mt-[2%] ri-user-line text-2xl cursor-pointer"></i>
-            <i className="hover:-mt-[2%] ri-heart-line text-2xl cursor-pointer"></i>
-            <Link href="/cart" className="hover:-mt-[2%] ri-handbag-line text-2xl cursor-pointer"></Link>
+          <i
+  onClick={openOverLay}
+  className="transition duration-[5000ms] ease-[cubic-bezier(0.25, 1, 0.5, 1)] hover:-mt-[0.6%] hover:text-[var(--primary-800)] ri-user-line text-2xl cursor-pointer"
+></i>
+<i
+  className="transition duration-[5000ms] ease-[cubic-bezier(0.25, 1, 0.5, 1)] hover:-mt-[0.6%] hover:text-[var(--primary-800)] ri-heart-line text-2xl cursor-pointer"
+></i>
+<Link
+  href="/cart"
+  className="transition duration-[5000ms] ease-[cubic-bezier(0.25, 1, 0.5, 1)] hover:-mt-[0.6%] hover:text-[var(--primary-800)] ri-handbag-line text-2xl cursor-pointer"
+></Link>
           </div>
         </div>
       </div>
@@ -129,8 +137,8 @@ const StaticNav = () => {
       {/* Mobile Search Bar */}
       <div className={`mx-auto w-[70%] mt-[16vh] sm:hidden transition-transform duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex items-center justify-center px-[5px] py-[5px] rounded-[2px] border-[1px] border-gray-500">
-          <i className="ri-search-line text-gray-700 mr-2"></i>
-          <input className="outline-none capitalize text-normal font-normal rounded-md text-gray-700 placeholder-gray-700 w-full" type="text" placeholder="Search..." />
+          <i className="ri-search-line text-[var(--primary-800)] mr-2"></i>
+          <input className="outline-none capitalize text-normal font-normal rounded-md text-[var(--primary-800)] placeholder-text-[var(--primary-800)] w-full" type="text" placeholder="Search..." />
         </div>
       </div>
 
@@ -153,7 +161,7 @@ const StaticNav = () => {
 
           {currentCategory === 'main'
             ? categories.map((category, index) => (
-              <div key={index} className="flex items-center justify-between p-3 border-b cursor-pointer hover:text-[#CAA968]" onClick={() => handleCategoryClick(category)}>
+              <div key={index} className="flex items-center justify-between p-3 border-b cursor-pointer hover:text-[var(--primary-800)]" onClick={() => handleCategoryClick(category)}>
                 <Link href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}>
                   <span className="text-lg">{category}</span>
                 </Link>
@@ -161,7 +169,7 @@ const StaticNav = () => {
               </div>
             ))
             : subcategories[currentCategory]?.map((subcategory, index) => (
-              <div key={index} className="flex items-center justify-between p-3 border-b cursor-pointer hover:text-[#CAA968]">
+              <div key={index} className="flex items-center justify-between p-3 border-b cursor-pointer hover:text-[var(--primary-800)]">
                 <Link href="/category/product">
                   <span className="text-lg">{subcategory}</span>
                 </Link>
@@ -195,7 +203,7 @@ const Login = ({ closeOverLay }) => {
           <button className="font-thin" onClick={() => setView("forgotPassword")}>Forgot Password?</button>
           <button className="bg-black text-white text-center text-xl w-[100%] p-2">Log In</button>
           <div className="w-full absolute left-0 bottom-0 py-3 bg-[#dddcd9]">
-            <button onClick={() => setView("register")} className="text-gray-800 font-normal">Dont have an account? <span className="text-black font-bold">Register Now</span></button>
+            <button onClick={() => setView("register")} className="text-[var(--primary-800)] font-normal">Dont have an account? <span className="text-black font-bold">Register Now</span></button>
           </div>
         </form>
       )}
@@ -214,9 +222,9 @@ const ForgotPassword = ({ setView, closeOverLay }) => {
       </div>
       <div className="flex items-start justify-between mt-8 w-[100%]">
         <h1 className="sm:text-2xl text-gray-700 lg:pb-10 text-xl">Forgot Password</h1>
-        <button onClick={() => setView("login")} className="text-lg text-gray-800">Go Back</button>
+        <button onClick={() => setView("login")} className="text-lg text-[var(--primary-800)]">Go Back</button>
       </div>
-      <h3 className="text-gray-800 -mt-[10%] text-left">Please enter your email address below to receive a password reset link.</h3>
+      <h3 className="text-[var(--primary-800)] -mt-[10%] text-left">Please enter your email address below to receive a password reset link.</h3>
       <input type="text" placeholder="Email*" className="text-black text-base p-2 border-gray-400 w-[100%] border-[1px]" />
       <div className="flex items-center justify-center mt-8 w-[100%]">
         <button className="bg-black text-white w-[100%] sm:px-[9%] px-[4%] py-[2.5%] text-xl font-semibold">Submit</button>

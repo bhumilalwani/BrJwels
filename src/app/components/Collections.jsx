@@ -11,13 +11,13 @@ const Collections = () => {
           src="https://i.pinimg.com/736x/91/23/48/912348f025bc98db9ccd6151083e9320.jpg"
           alt="Celestial Collection"
         />
-      <div className="absolute top-0 left-0 w-full h-full bg-gray-200/20 transition-transform duration-1000 transform translate-y-[-100%] group-hover:translate-y-0 flex flex-col justify-center items-center">
-          <h3 className="sm:text-3xl text-2xl text-gray-800 font-bold mb-4">
+      <div className="absolute top-0 left-0 w-full h-full bg-gray-900/80 transition-transform duration-1000 transform translate-y-[-100%] group-hover:translate-y-0 flex flex-col justify-center items-start px-[10%]">
+          <h3 className="sm:text-3xl text-2xl text-[var(--background-color)] font-bold mb-4">
             Celestial Collection
           </h3>
           <Link
             href="/shop/:prodId"
-            className="text-black text-xl text-gray-200 font-bold hover:underline"
+            className="text-black text-xl text-[var(--background-color)] font-bold hover:underline"
           >
             Shop Now <i className="ri-arrow-right-line"></i>
           </Link>
@@ -31,13 +31,13 @@ const Collections = () => {
           src="https://i.pinimg.com/736x/57/62/7c/57627c3896e2a22d07a72484b9bd10ca.jpg"
           alt="Celestial Collection"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-200/20 transition-transform duration-1000 transform translate-y-[-100%] group-hover:translate-y-0 flex flex-col justify-center items-center">
-          <h3 className="sm:text-3xl text-2xl text-gray-800 font-bold mb-4">
+        <div className="absolute top-0 left-0 w-full h-full px-[10%] bg-gray-900/80 transition-transform duration-1000 transform translate-y-[-100%] group-hover:translate-y-0 flex flex-col justify-center items-start">
+          <h3 className="sm:text-3xl text-2xl text-[var(--background-color)] font-bold mb-4">
             Celestial Collection
           </h3>
           <Link
             href="/shop/:prodId"
-            className="text-black text-xl text-gray-200 font-bold hover:underline"
+            className="text-black text-xl text-[var(--background-color)] font-bold hover:underline"
           >
             Shop Now <i className="ri-arrow-right-line"></i>
           </Link>
@@ -51,13 +51,13 @@ const Collections = () => {
           src="https://i.pinimg.com/736x/94/74/22/94742287b5b997505eb4ca12fbb91ee8.jpg"
           alt="Celestial Collection"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-200/20 transition-transform duration-1000 transform translate-y-[-100%] group-hover:translate-y-0 flex flex-col justify-center items-center">
-          <h3 className="sm:text-3xl text-2xl text-gray-800 font-bold mb-4">
+        <div className="absolute top-0 left-0 w-full h-full px-[10%] bg-gray-900/80 transition-transform duration-1000 transform translate-y-[-100%] group-hover:translate-y-0 flex flex-col justify-center items-start">
+          <h3 className="sm:text-3xl text-2xl text-[var(--background-color)] font-bold mb-4">
             Celestial Collection
           </h3>
           <Link
             href="/shop/:prodId"
-            className="text-black text-xl text-gray-200 font-bold hover:underline"
+            className="text-black text-xl text-[var(--background-color)] font-bold hover:underline"
           >
             Shop Now <i className="ri-arrow-right-line"></i>
           </Link>

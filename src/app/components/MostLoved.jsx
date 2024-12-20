@@ -38,7 +38,7 @@ const MostLoved = () => {
         <div className="bg-white">
             <section className="py-10 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto">
-                    <h2 className="text-2xl font-normal mb-8 text-center">Most Loved On BR</h2>
+                    <h2 className="text-2xl font-normal text-[var(--headings-color)] mb-8 text-center">Most Loved On BR</h2>
 
                     <div className="relative">
                         <Swiper
@@ -81,20 +81,20 @@ const MostLoved = () => {
                                                         e.preventDefault();
                                                         LikeHandler(stone.name);
                                                     }}
-                                                    className="bg-white rounded-full p-2 shadow-md"
+                                                    className="bg-white rounded-full px-2 py-1 shadow-md"
                                                 >
                                                     <i
                                                         className={`${
                                                             likedStones[stone.name]
-                                                                ? 'ri-heart-fill text-red-500'
-                                                                : 'ri-heart-line text-gray-500'
+                                                                ? 'ri-heart-fill text-black'
+                                                                : 'ri-heart-line text-[var(--primary-800)]'
                                                         } text-xl`}
                                                     ></i>
                                                 </button>
                                             </div>
-                                            <h3 className="font-semibold text-lg">{stone.name}</h3>
-                                            <p className="text-gray-500 text-sm mb-2">Birthstone description</p>
-                                            <p className="font-bold text-lg">$1,999.9</p>
+                                            <h3 className="font-semibold text-[var(--primary-color)] text-lg">{stone.name}</h3>
+                                            <p className="text-[var(--primary-800)] text-sm mb-2">Birthstone description</p>
+                                            <p className="font-semibold text-lg text-[var(--headings-color)]">$1,999.9</p>
                                         </Link>
                                     </div>
                                 </SwiperSlide>

@@ -124,29 +124,29 @@ const handleNext = () => {
       <DynamicNav />
 
       <div className="flex flex-col gap-[2vh] mx-auto my-[2vh] px-4 py-4">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/" className="hover:text-gray-700">Home</Link>
+        <div className="flex items-center gap-2 text-sm text-[var(--primary-800)]">
+          <Link href="/" className="hover:text-[var(--primary-800)]">Home</Link>
           <span>/</span>
-          <Link href="/jewelry" className="hover:text-gray-700">Jewelry</Link>
+          <Link href="/" className="hover:text-[var(--primary-800)]">Jewelry</Link>
           <span>/</span>
-          <Link href="/jewelry/rings" className="hover:text-gray-700">Rings</Link>
+          <Link href="/category/rings" className="hover:text-[var(--primary-800)]">Rings</Link>
           <span>/</span>
-          <span className="text-gray-900">Solitaire Round Diamond Infinity Promise Ring</span>
+          <span className="text-[var(--headings-color)]">Solitaire Round Diamond Infinity Promise Ring</span>
         </div>
         <div className="md:hidden block">
-        <h1 className="text-base font-semibold text-gray-700 ">
+        <h1 className="text-base font-semibold text-[var(--primary-800)] ">
                 Solitaire Round Diamond Infinity Promise Ring
               </h1>
 
               <div className="flex items-center gap-2 mb-4">
-                <div className="flex">
+                <div className="flex ">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <svg key={star} className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.95.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
-                <span className="text-sm text-gray-600 underline ">(101 Reviews)</span>
+                <span className="text-sm text-[var(--primary-800)] underline ">(101 Reviews)</span>
               </div>
 </div>
         
@@ -261,7 +261,7 @@ const handleNext = () => {
     <div className="md:w-1/2 w-full">
       <div className="sticky top-4 space-y-6">
         {/* Product Details */}
-        <h1 className="text-base font-semibold text-gray-700">
+        <h1 className="text-base font-semibold text-[var(--primary-800)]">
           Solitaire Round Diamond Infinity Promise Ring
         </h1>
         <div className="flex items-center gap-2">
@@ -282,9 +282,9 @@ const handleNext = () => {
 
         {/* Price Section */}
         <div className="flex items-baseline gap-4">
-          <span className="text-3xl text-gray-800">$3,555</span>
-          <span className="text-xl text-gray-500 line-through">$3,949</span>
-          <span className="text-sm text-green-600 font-medium">(10% OFF)</span>
+          <span className="text-3xl text-[var(--headings-color)] text-g">$3,555</span>
+          <span className="text-xl text-[var(--primary-800)] line-through">$3,949</span>
+          <span className="text-sm text-[var(--primary-800)] font-medium">(10% OFF)</span>
         </div>
 
         {/* Customization */}
@@ -294,7 +294,7 @@ const handleNext = () => {
         <div className="flex gap-2 md:w-[60%]">
         <button className="flex-1 relative bg-black text-white text-white py-3 transition-transform px-6 group ">
                   Add to Cart
-                  <span className="absolute left-0 top-[100%] bg-[#c48c1f] w-[0%] h-[4px] rounded-[0px] duration-1000 group-hover:w-full"></span>
+                  <span className="absolute left-0 top-[100%] bg-[var(--gold)] w-[0%] h-[4px] rounded-[0px] duration-1000 group-hover:w-full"></span>
 
                 </button>
           <button className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
@@ -327,12 +327,12 @@ const handleNext = () => {
         <div>
             <section className="section-gap py-10 bg-white transition-transform duration-500">
                 <div className="container mx-auto text-center sm:px-[10vh]">
-                    <h2 className="text-2xl font-normal mb-14">Recently Viewed</h2>
+                    <h2 className="text-2xl font-normal text-[var(--headings-color)] mb-14">Recently Viewed</h2>
                     <div className="relative flex justify-center items-center">
                         {/* Left Arrow */}
                         {/* <button
                             onClick={prevSlide}
-                            className="absolute left-0 text-gray-800 text-2xl rounded-full p-2 z-10"
+                            className="absolute left-0 text-g text-2xl rounded-full p-2 z-10"
                         >
                             &lt;
                         </button> */}
@@ -358,13 +358,13 @@ const handleNext = () => {
                         className={`absolute right-[8%] top-[5%] cursor-pointer font-extralight text-lg ${
                             likedStones[stone.name]
                                 ? 'ri-heart-fill text-black-700' // Filled heart
-                                : 'ri-heart-line text-gray-500' // Outlined heart
+                                : 'ri-heart-line text-[var(--primary-800)]' // Outlined heart
                         }`}
                     ></i>
-                    <p className="font-semibold">{stone.name}</p>
-                    <p className="text-gray-500 text-sm">Birthstone description</p>
-                    <h3>$1,999.9</h3>
-                    <button className="group-hover:block hidden sm:px-[50px] px-[30px] mt-[4vh] py-[8px] border-[1.5px] border-solid border-black whitespace-nowrap">
+                    <p className="font-semibold text-[var(--headings-color)]">{stone.name}</p>
+                    <p className="text-[var(--primary-800)] text-sm">Birthstone description</p>
+                    <h3 className="text-[var(--headings-color)]">$1,999.9</h3>
+                    <button className="group-hover:block text-[var(--headings-color)] hidden sm:px-[50px] px-[30px] mt-[4vh] py-[8px] border-[1.5px] border-solid border-[var(--headings-color)] whitespace-nowrap">
                         Customize Now
                     </button>
                 </div>
@@ -376,7 +376,7 @@ const handleNext = () => {
                         {/* Right Arrow */}
                         {/* <button
                             onClick={nextSlide}
-                            className="absolute right-0 text-gray-800 text-2xl p-2 z-10"
+                            className="absolute right-0 text-g text-2xl p-2 z-10"
                         >
                             &gt;
                         </button> */}
@@ -470,14 +470,14 @@ const ProductDetails = () => {
           <h1 className="text-xl font-semibold mb-2">
             Oval Sapphire and Round Diamond Border Ring
           </h1>
-          <p className="text-lg text-gray-500 mb-4">SKU: SR0169S</p>
+          <p className="text-lg text-[var(--primary-800)] mb-4">SKU: SR0169S</p>
 
     
 
           {/* Product Description */}
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-2">Product Details:</h2>
-            <p className="text-gray-700">
+            <p className="text-[var(--primary-800)]">
               This stunning oval sapphire and round diamond border ring is
               crafted with precision and elegance. Featuring a vibrant oval
               sapphire encircled by brilliant round diamonds, it exudes luxury
@@ -539,7 +539,7 @@ const ProductReview = () => {
   
     return (
       <section className="max-w-5xl mx-auto px-4 py-8">
-        <h2 className="text-2xl text-gray-800 mb-3 text-center">Customer Reviews</h2>
+        <h2 className="text-2xl text-g mb-3 text-center">Customer Reviews</h2>
         <div className="space-y-6">
           {reviews.map((review, index) => (
             <div
@@ -547,7 +547,7 @@ const ProductReview = () => {
               className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm"
             >
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-medium text-gray-900">{review.name}</h3>
+                <h3 className="text-lg font-medium text-[var(--headings-color)]">{review.name}</h3>
                 <div className="flex">{renderStars(review.rating)}</div>
               </div>
               <p className="text-gray-600 mb-2">{review.comment}</p>
@@ -563,7 +563,7 @@ const ProductReview = () => {
 
   const ContactUs = () => {
     return (
-      <div className="w-full py-[5vh] mt-[10vh] bg-[#F5F5F6] flex items-center justify-center gap-[5vh]">
+      <div className="w-full py-[5vh] mt-[10vh] text-[var(--headings-color)] bg-[var(--background-color)] flex items-center justify-center gap-[5vh]">
         <div className="flex flex-col items-center justify-center">
         <i className="ri-phone-line font-extralight text-2xl"></i>
             <span>Phone</span>
@@ -613,7 +613,7 @@ const YouMayALsoLike = () => {
                     <button
                         key={tab}
                         onClick={() => setTab(tab)}
-                        className={`text-gray-700 text-sm border-b-2 border-${
+                        className={`text-[var(--primary-800)] text-sm border-b-2 border-${
                             tab === currentTab? 'gray-600' : 'transparent'
                         } hover:text-gray-600 hover:border-gray-600 transition duration-300`}
                     >
@@ -625,7 +625,7 @@ const YouMayALsoLike = () => {
                         {/* Left Arrow */}
                         <button
                             onClick={prevSlide}
-                            className="absolute left-0 text-gray-800 text-2xl rounded-full p-2 z-10"
+                            className="absolute left-0 text-g text-2xl rounded-full p-2 z-10"
                         >
                             &lt;
                         </button>
@@ -653,11 +653,11 @@ const YouMayALsoLike = () => {
                                             className={`absolute right-[8%] top-[5%] cursor-pointer font-extralight text-lg ${
                                                 likedStones[stone.name]
                                                     ? 'ri-heart-fill text-black-700' // Filled heart
-                                                    : 'ri-heart-line text-gray-500' // Outlined heart
+                                                    : 'ri-heart-line text-[var(--primary-800)]' // Outlined heart
                                             }`}
                                         ></i>
                                         <p className="font-semibold">{stone.name}</p>
-                                        <p className="text-gray-500 text-sm">Birthstone description</p>
+                                        <p className="text-[var(--primary-800)] text-sm">Birthstone description</p>
                                         <h3>$1,999.9</h3>
                                         <button className="sm:px-[50px] px-[30px] mb-[2vh] mt-[4vh] py-[8px] border-[1.5px] border-solid border-black whitespace-nowrap">
                                             Customize Now
@@ -670,7 +670,7 @@ const YouMayALsoLike = () => {
                         {/* Right Arrow */}
                         <button
                             onClick={nextSlide}
-                            className="absolute right-0 text-gray-800 text-2xl p-2 z-10"
+                            className="absolute right-0 text-g text-2xl p-2 z-10"
                         >
                             &gt;
                         </button>

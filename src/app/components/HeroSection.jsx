@@ -15,9 +15,9 @@ const  HeroSection = () => {
 
   {/* <!-- Content Over Video --> */}
   <div className="relative z-10 flex flex-col items-start ml-[20%] gap-[10px] justify-center h-full">
-  <h4 className='text-xl text-white font-normal'>Who Needs Black Friday, When We&apos;ve Got Color?</h4>
-                            <h1 className='text-[#C48C1F] text-2xl font-semibold'>2024&apos;s MOST COLORFUL DEALS</h1>
-                            <div className="timer">Sale Ends In: <div className="countdown" id="countdownTimer">
+  <h4 className='text-xl text-[var(--background-color)] font-normal'>Who Needs Black Friday, When We&apos;ve Got Color?</h4>
+                            <h1 className='text-[var(--gold)] text-2xl font-semibold'>2024&apos;s MOST COLORFUL DEALS</h1>
+                            <div className="timer text-[var(--headings-color)]">Sale Ends In: <div className="countdown" id="countdownTimer">
                                     <span id="hours">00</span>h
                                     <span>:</span>
                                     <span id="minutes">00</span>m
@@ -25,15 +25,15 @@ const  HeroSection = () => {
                                     <span id="seconds">00</span>s
                                 </div>
                             </div>
-                            <div className="hero-button border-[1px] border-solid border-white px-[25px] py-[10px] hover:bg-white ">
-                                <Link href="/shop" className='text-white text-2xl font-normal hover:no-underline hover:text-black'>Shop Now</Link>
+                            <div className="hero-button border-[1px] border-solid border-[var(--background-color)] px-[25px] py-[10px] hover:bg-[var(--background-color)] ">
+                                <Link href="/shop" className='text-[var(--background-color)] text-2xl font-normal hover:no-underline hover:text-[var(--primary-color)]'>Shop Now</Link>
                             </div>
   </div>
 </div>
 
 
 
-<section className="sm:mt-[5%] -mt-[30%] sm:mb-[5%] mb-[10%] mx-auto w-fit ">
+<section className="sm:mt-[5%] text-[var(--headings-color)] -mt-[30%] sm:mb-[5%] mb-[10%] mx-auto w-fit">
   <div className="container mx-auto">
     <div className="sm:flex grid grid-cols-3 items-center sm:gap-10 sm:flex-wrap">
       {/* Rings */}

@@ -80,19 +80,19 @@ const LastFooter = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[20px] px-[5vw] mt-[10vh] pb-[5vh] mb-[5vh] bg-[#F5F5F6]">
+    <div className=" xl:pl-[15%] pt-[2%] grid grid-cols-1 justify-center items-start sm:grid-cols-3 lg:grid-cols-3 gap-[20px] px-[5vw] mt-[10vh] pb-[5vh] mb-[5vh] bg-[var(--background-color)]">
       {sections.map((section, index) => (
-        <div key={index} className="flex flex-col items-start px-[10px]">
+        <div key={index} className=" flex flex-col items-start px-[10px]">
           {/* Heading Section */}
           <div
-            className={`flex items-center justify-between w-full cursor-pointer ${
+            className={`flex items-center justify-between w-[80%] cursor-pointer ${
               isMobile && "sm:cursor-auto"
             }`}
             onClick={() => {
               if (isMobile) toggleSection(index); // Toggle only in mobile view
             }}
           >
-            <h2 className="font-semibold my-[2.5vh]">{section.title}</h2>
+            <h2 className="font-semibold text-[var(--headings-color)] my-[2.5vh]">{section.title}</h2>
             {isMobile && (
               <i
                 className={`text-xl ${
@@ -106,7 +106,7 @@ const LastFooter = () => {
           {(isMobile ? visibleSection === index : true) && (
             <div className="w-full mt-2 space-y-2">
               {section.links.map((link, i) => (
-                <Link key={i} className="block hover:text-[#d6993e]" href="/">
+                <Link key={i} className="block text-[var(--headings-color)] w-fit hover:text-[var(--secondary-color)]" href="/">
                   {link}
                 </Link>
               ))}

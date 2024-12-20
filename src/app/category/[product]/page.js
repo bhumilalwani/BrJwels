@@ -149,16 +149,16 @@ const Page = () => {
 
       <div className='flex flex-col mt-[5vh] items-start px-[2%]'>
         <div className='flex flex-col sm:flex-row w-[100%] h-[100%] bg-white items-center gap-[1%]'>
-        <div className='flex flex-col w-[95%] ml-5'><h2 className='text-gray-800 text-xl font-semibold text-left capitalize'>
+        <div className='flex flex-col w-[95%] ml-5'><h2 className='text-[var(--primary-800)] text-xl font-semibold text-left capitalize'>
           {/* {params.product} */}
           Rings
         </h2>
-        <p className='text-sm mt-[1vh] font-semibold text-gray-500 mb-5'>
+        <p className='text-sm mt-[1vh] font-semibold text-[var(--primary-500)] mb-5'>
           Make a statement wherever you go with handcrafted rings from Angara.
           From &quot;love tokens to outfit pick-me-ups, we have got them all. Get exploring
         </p>
         <div className='flex-col mt-[5vh] items-start justify-center hidden xl:flex'>
-            <h3 className='text-gray-600 fony-semibold text-base'>Get 10% OFF on orders over $500 & Free Gifts</h3>
+            <h3 className='text-[var(--primary-500)] fony-semibold text-base text-[var(--primary-500)]'>Get 10% OFF on orders over $500 & Free Gifts</h3>
             <button className='bg-black text-white mt-[2vh] font-sm px-[10px] py-[5px] mb-[5vh]'>View All Offers</button>
         </div>
         </div>
@@ -235,21 +235,21 @@ const Page = () => {
     </div>
           </div>
           <div className='flex items-center w-[100%] justify-between md:ml-[40%] md:w-[60%] mt-[4vh]'>
-            <h3 className='text-gray-600 text-xl font-bold'>5394 custom rings</h3>
+            <h3 className='text-[var(--primary-800)] text-xl font-bold'>5394 custom rings</h3>
             <button
               onClick={toggleFilter}
-              className='hover:bg-black hover:text-white duration-500 text-black md:hidden text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'
+              className='hover:bg-black hover:text-white duration-500 text-[var(--headings-color)] md:hidden text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'
             >
               Filter
             </button>
             <div className='flex flex-col sm:flex-row'><button className='hover:bg-black hover:text-white duration-500 text-black text-normal font-semibold px-[12px] rounded-[5px] py-[5px] border-[1px]'>
-             <h2>Sort By</h2>
+             <h2 className='text-[var(--headings-color)]'>Sort By</h2>
            
-            </button>  <select className='bg-transparent outline-none'>
-        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
-        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
-        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
-        <option className='text-xs text-gray-700' value="Best Seller">Best Seller</option>
+            </button>  <select className=' text-[var(--primary-800)] bg-transparent outline-none'>
+        <option className='text-xs text-[var(--primary-800)]' value="Best Seller">Best Seller</option>
+        <option className='text-xs text-[var(--primary-800)]' value="Best Seller">Best Seller</option>
+        <option className='text-xs text-[var(--primary-800)]' value="Best Seller">Best Seller</option>
+        <option className='text-xs text-[var(--primary-800)]' value="Best Seller">Best Seller</option>
     </select></div>
             </div>
         <div className='flex relative flex-col mt-[1vh] sm:flex-row items-start gap-2 -mt-[0%] '>
@@ -261,13 +261,13 @@ const Page = () => {
           <div className='flex flex-col w-[100%] md:w-[72%] items-center mx-auto justify-center'>
             <div className='grid ml-[10%] justify-center grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 p-[1vw] gap-3 mt-[0vh]'>
             {prevState.map((obj, index) => (
-            <div key={index} className='flex flex-col'>
+            <div key={index} className='flex flex-col text-[var(--headings-color)]'>
                 <ProductItem key={index} images={obj.images}/>    {/* Text Section */}
             <div className="text-left">
               <h3 className="product-name text-base font-medium">
                 {obj.title}
               </h3>
-              <span className="price text-md text-gray-700">{obj.price}</span>
+              <span className="price text-md text-[var(--primary-800)]">{obj.price}</span>
             </div></div>
             ))}
           </div>
@@ -281,8 +281,8 @@ const Page = () => {
       </div>
       {showFilter ? <FilterSection setShowFilter={setShowFilter}/> : null}
       <div className="w-[100%] flex flex-col items-center sm:mt-[10vh] ">
-      <h2 className="font-semibold text-2xl">#CelebrateWithColor</h2>
-      <p className="text-gray-600 mt-2 px-4">
+      <h2 className="font-semibold text-2xl text-[var(--headings-color)]">#CelebrateWithColor</h2>
+      <p className="text-[var(--primary-500)] mt-2 px-4">
         Keep up with @Brjewelry making colorful noise in the world.
       </p>
       <div className="relative w-[80%] overflow-x-scroll scrollbar-hidden mt-6">
@@ -501,7 +501,7 @@ const FilterSection = (props) => {
               className={`cursor-pointer p-2 hover:bg-gray-200 ${
                 activeCategory === index
                   ? "text-[#c48c1f]" // Active category color
-                  : "text-gray-700"
+                  : "text-[var(--primary-800)]"
               }`}
               onClick={() => setActiveCategory(index)}
             >
@@ -515,13 +515,13 @@ const FilterSection = (props) => {
           {activeCategory !== null && categories[activeCategory].subcategories.length > 0 ? (
             <ul className="space-y-2">
               {categories[activeCategory].subcategories.map((subcategory, index) => (
-                <li key={index} className="text-gray-700 cursor-pointer hover:text-[#c48c1f]">
+                <li key={index} className="text-[var(--primary-800)] cursor-pointer hover:text-[#c48c1f]">
                   {subcategory}
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-gray-500">Select a category to view subcategories</p>
+            <p className="text-[var(--primary-500)]">Select a category to view subcategories</p>
           )}
         </div>
         <div className='mt-[2vh]'>
@@ -564,7 +564,7 @@ const FilterSectionForBigScreens = () => {
     <div className="w-full hidden md:block max-w-[280px] bg-white -mt-[0vh]">
       <div className="flex items-center justify-between p-4 border-b">
         <h2 className="text-lg font-semibold">Filters</h2>
-        <button className="text-sm text-gray-500 hover:text-gray-700">
+        <button className="text-sm text-[var(--primary-500)] hover:text-[var(--primary-800)]">
           Clear All
         </button>
       </div>
@@ -592,7 +592,7 @@ const FilterSectionForBigScreens = () => {
                   <span className="block w-4 h-4 rounded-full bg-gray-200"></span>
                 </span>
                 <span className="text-sm">White Gold</span>
-                <span className="text-sm text-gray-500 ml-1">(4602)</span>
+                <span className="text-sm text-[var(--primary-500)] ml-1">(4602)</span>
               </div>
             </label>
             <label className="flex items-center space-x-3 mb-3">
@@ -605,7 +605,7 @@ const FilterSectionForBigScreens = () => {
                   <span className="block w-4 h-4 rounded-full bg-yellow-200"></span>
                 </span>
                 <span className="text-sm">Yellow Gold</span>
-                <span className="text-sm text-gray-500 ml-1">(4271)</span>
+                <span className="text-sm text-[var(--primary-500)] ml-1">(4271)</span>
               </div>
             </label>
             <label className="flex items-center space-x-3 mb-3">
@@ -618,7 +618,7 @@ const FilterSectionForBigScreens = () => {
                   <span className="block w-4 h-4 rounded-full bg-rose-200"></span>
                 </span>
                 <span className="text-sm">Rose Gold</span>
-                <span className="text-sm text-gray-500 ml-1">(3980)</span>
+                <span className="text-sm text-[var(--primary-500)] ml-1">(3980)</span>
               </div>
             </label>
           </div>
@@ -800,10 +800,10 @@ const AllAboutRings=()=>{
               />
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-lg md:text-xl font-semibold mb-2">
+              <h3 className="text-lg md:text-xl text-[var(--headings-color)] font-semibold mb-2">
                 {review.title}
               </h3>
-              <p className="text-sm md:text-base text-gray-600 mb-4">
+              <p className="text-sm md:text-base text-[var(--primary-500)] mb-4">
                 {review.content}
               </p>
               <div className="flex items-center gap-2 mb-2">
@@ -823,7 +823,7 @@ const AllAboutRings=()=>{
                   ))}
                 </div>
               </div>
-              <div className="text-xs md:text-sm text-gray-500">
+              <div className="text-xs md:text-sm text-[var(--primary-500)]">
                 <span>{review.author}</span>
                 <span className="mx-2">-</span>
                 <span>{review.date}</span>
@@ -835,13 +835,13 @@ const AllAboutRings=()=>{
       <div className="flex justify-between">
         <button
           onClick={prevReviews}
-          className="flex items-center px-3 py-2 sm:px-4 sm:py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+          className="flex items-center px-3 py-2 sm:px-4 sm:py-2 bg-gray-100 text-[var(--primary-800)] rounded-lg hover:bg-gray-200"
         >
           Previous
         </button>
         <button
           onClick={nextReviews}
-          className="flex items-center px-3 py-2 sm:px-4 sm:py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+          className="flex items-center px-3 py-2 sm:px-4 sm:py-2 bg-gray-100 text-[var(--primary-800)] rounded-lg hover:bg-gray-200"
         >
           Next
         </button>
@@ -864,7 +864,7 @@ const TabSwitcher = () => {
           key={tab}
           onClick={() => setActiveTab(tab)}
           className={`customize-button heading2 text-lg font-semibold cursor-pointer relative ${
-            activeTab === tab ? "text-black" : "text-gray-500"
+            activeTab === tab ? "text-black" : "text-[var(--primary-500)]"
           }`}
         >
           {tab}
