@@ -109,9 +109,9 @@ const SidebarNav = () => {
         <div className="prose prose-gray max-w-none">
           <p className="mb-8">
             Welcome to the Br Website. These Privacy Policy apply to the Br Website located at{' '}
-            <a href="/" className="text-blue-600 hover:underline">
+            <Link href="/" className="text-blue-600 hover:underline">
               www.Br.com
-            </a>
+            </Link>
             {' '}and its subsidiaries and Affiliates, including Br&apos;s Sites around the world (collectively the
             &quot;Site&quot;). Please read the below-mentioned Privacy Policy carefully, as they set out Your
             rights and obligations regarding the use of the Site and its Services. By visiting the Site, You agree to be
