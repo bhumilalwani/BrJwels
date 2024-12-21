@@ -15,23 +15,23 @@ const DynamicNav = () => {
       // Handle scroll direction for navbar visibility
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollYRef.current && currentScrollY > 50) {
-        setNavbarVisible(false); // Hide on scroll down
-      } else {
-        setNavbarVisible(true); // Show on scroll up
-      }
-
-      lastScrollYRef.current = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+        const currentScrollY = window.scrollY;
+  
+        if (currentScrollY > lastScrollYRef.current && currentScrollY > 50) {
+          setNavbarVisible(false); // Hide on scroll down
+        } else {
+          setNavbarVisible(true); // Show on scroll up
+        }
+  
+        lastScrollYRef.current = currentScrollY;
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className={`xl:flex hidden bg-white z-20 mt-[10vh] items-center justify-center w-[100%] min-h-[10vh] backdrop-opacity-0 group flex-col relative ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <div className={`xl:flex hidden bg-white z-20 mt-[10vh] items-center justify-center w-[100%] min-h-[10vh] backdrop-opacity-0 group flex-col relative ${isNavbarVisible ? 'translate-y-0' : '-translate-y-[100%]'}`}>
       <div className="flex items-center justify-center w-full h-[20%] flex-col">
         {/* Navigation Links */}
         <div className="flex items-center justify-between gap-[5vw] flex-wrap">

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 
+
 // StaticNav Component
 const StaticNav = () => {
   const [isSideMenuOpen, setSideMenuOpen] = useState(false);
@@ -69,7 +70,9 @@ const StaticNav = () => {
 
   // Open Overlay (show login)
   const openOverLay = () => {
-    setShowLogin(true);
+ 
+        setShowLogin(true); // Show login overlay with delay
+      
   };
 
   // Close Overlay (hide login)
@@ -107,7 +110,7 @@ const StaticNav = () => {
           <div className="logo ml-[5px] ">
             <Link href="/" className="text-2xl font-semibold cursor-pointer">BR JEW.</Link>
           </div>
-
+  
      
 
           {/* Icons */}
@@ -135,7 +138,7 @@ const StaticNav = () => {
       </div>
 
       {/* Mobile Search Bar */}
-      <div className={`mx-auto w-[70%] mt-[16vh] sm:hidden transition-transform duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className={`mx-auto w-[70%] mt-[12vh] sm:hidden transition-transform duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex items-center justify-center px-[5px] py-[5px] rounded-[2px] border-[1px] border-gray-500">
           <i className="ri-search-line text-[var(--primary-800)] mr-2"></i>
           <input className="outline-none capitalize text-normal font-normal rounded-md text-[var(--primary-800)] placeholder-text-[var(--primary-800)] w-full" type="text" placeholder="Search..." />
@@ -188,7 +191,11 @@ const Login = ({ closeOverLay }) => {
   const [view, setView] = useState("login");
 
   return (
-    <div className="overlay transition-transform duration-500 top-0 text-center left-0 w-[100%] h-[100%] bg-[#666666] z-50 fixed flex items-center justify-center bg-opacity-50">
+    <div
+    
+    className={`overlay transition-all duration-500 ease-in-out top-0 text-center left-0 w-[100%] h-[100%] bg-[#666666] z-50 fixed flex items-center justify-center bg-opacity-50 ${view === "login" || view === "register" || view === "forgotPassword" ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+    style={{ transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out" }}   
+    >
       {view === "login" && (
         <form className="flex relative items-start px-[3%] lg:w-[30%] w-[80%] sm:w-[40%] relative h-[50%] bg-gray-100 justify-start pt-[8%] sm:pt-10 gap-5 flex-col">
               <div className="close w-[100%] flex items-start text-sm sm:text-lg cursor-pointer absolute top-2 right-4 justify-end">

@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Zoom, Navigation, Pagination } from 'swiper/modules';
+import Headings from './Headings';
 const reviews = [
   {
     title: 'Beautiful!',
@@ -99,13 +100,13 @@ const reviews = [
 const CustomerReview = () => {
   return (
     <section
-      className="section-gap flex flex-col items-center justify-center py-[10%] bg-gray-50"
+      className="section-gap flex flex-col items-center justify-center pt-[10%] pb-[2%] bg-gray-50"
       
     >
       <div className="container text-center px-4 sm:px-8">
         <div className="inner-container">
           <div className="section-heading mb-8">
-            <h2 className="sm:text-2xl text-[var(--headings-color)] text-xl font-semibold mb-2">What Customers Are Saying</h2>
+            <Headings text="What Customers Are Saying"></Headings>
            
           </div>
           <div className="review-block">
@@ -122,8 +123,11 @@ const CustomerReview = () => {
         slidesPerView={3}
         navigation={true}
        breakpoints={{
-        1000:{
+        1024:{
             slidesPerView:3,
+        },
+        1000:{
+            slidesPerView:2,
         },
         550:{
             slidesPerView:2
@@ -138,13 +142,13 @@ const CustomerReview = () => {
         <SwiperSlide key={index}>
                 <div
                       key={index}
-                      className="review-card-wrapper flex-shrink-0 w-72 sm:w-80 h-auto bg-white shadow-lg rounded-lg p-4 flex flex-col items-center justify-center snap-center"
+                      className="review-card-wrapper flex-shrink-0 w-72 sm:w-80 h-auto bg-white shadow-lg rounded-lg py-2 px-4 flex flex-col items-center justify-center snap-center"
                     >
-                      <Link href={review.productUrl} className="text-blue-500 mb-4">
+                      <Link href={review.productUrl} className="text-blue-500 ">
                         <img
                           alt={review.title}
                           src={review.imageUrl}
-                          className="w-32 h-32 object-contain"
+                          className="w-16 h-16 fit-contain"
                           loading="lazy"
                         />
                       </Link>

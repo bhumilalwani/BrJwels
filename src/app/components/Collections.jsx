@@ -17,7 +17,7 @@ const Collections = () => {
           </h3>
           <Link
             href="/shop/:prodId"
-            className="text-black text-xl text-[var(--background-color)] font-bold hover:underline"
+            className="text-xl text-[var(--background-color)] font-bold hover:underline"
           >
             Shop Now <i className="ri-arrow-right-line"></i>
           </Link>
@@ -37,7 +37,7 @@ const Collections = () => {
           </h3>
           <Link
             href="/shop/:prodId"
-            className="text-black text-xl text-[var(--background-color)] font-bold hover:underline"
+            className="text-xl text-[var(--background-color)] font-bold hover:underline"
           >
             Shop Now <i className="ri-arrow-right-line"></i>
           </Link>
@@ -57,7 +57,7 @@ const Collections = () => {
           </h3>
           <Link
             href="/shop/:prodId"
-            className="text-black text-xl text-[var(--background-color)] font-bold hover:underline"
+            className="text-xl text-[var(--background-color)] font-bold hover:underline"
           >
             Shop Now <i className="ri-arrow-right-line"></i>
           </Link>

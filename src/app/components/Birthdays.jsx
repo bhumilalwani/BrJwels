@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Navigation } from 'swiper/modules';
+import Headings from './Headings';
 
 const Birthdays = () => {
   const images = [
@@ -25,7 +26,8 @@ const Birthdays = () => {
 
   return (
     <div className="flex flex-col mt-[5vh] ">
-      <h4 className="font-semibold text-2xl text-[var(--headings-color)] text-center">Make Birthdays More Colorful</h4>
+     
+      <Headings text="Make Birthdays More Colorful"></Headings>
       <div className="mySwiperBirthdayWraper relative w-[70%] mx-auto mt-[6vh] mb-[10vh]">
       <Swiper
         rewind={true}

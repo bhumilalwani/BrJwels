@@ -101,17 +101,17 @@ const [currentIndex, setCurrentIndex] = useState(0);
           
         </div>
    
-      <div className="mt-[5%] flex items-center justify-start sm:justify-center ">
+      <div className="mt-[5%] flex items-center justify-start sm:justify-center px-5">
           <VideoCarousel className="fit-cover" currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
        
         </div>
 
          {/* Buttons Section */}
-      <div className="grid md:-mt-[20%] lg:-mt-[40%] xl:-mt-[70%] grid-cols-2 content-center w-[90%] sm:w-[90%] md:w-[80%] lg:w-[70%] mr-[1vh]">
+      <div className="grid grid-cols-2 xl:h-fit gap-[16px] xl:grid-cols-3 mt-[16px] md:-mt-[28%] lg:-mt-[44%] xl:-mt-[45%] items-center justify-center ml-[5%]">
          {videos.map((video, index) => (
           <button
             key={video.id}
-            className={`rounded-l-[50px] flex rounded-[4px] gap-[5%] w-[24vh] pr-10 shrink-0 items-center mb-2 transition ${
+            className={`flex rounded-l-full items-center justify-start transition h-[32px] sm:h-[38px] min-w-fit w-[33vw] sm:w-[25vw] md:w-[20vw] lg:w-[12vw] ${
               index === currentIndex
                 ? "bg-gray-300 "
                 : "bg-white "
@@ -121,9 +121,9 @@ const [currentIndex, setCurrentIndex] = useState(0);
             <img
               src={video.poster}
               alt={video.title}
-              className="w-[50px] shrink-0 h-[50px] rounded-full "
+              className="w-[30px] h-[30px] sm:w-[44px] sm:h-[44px] rounded-full"
             />
-            <span className="text-sm text-[var(--primary-800)] font-semibold">{video.title}</span>
+            <span className="sm:text-sm text-xs text-[var(--primary-800)] font-semibold pl-1 sm:pl-4">{video.title}</span>
           </button>
         ))}
       </div>
@@ -188,7 +188,7 @@ const VideoCarousel = (props) => {
   
   
     return (
-      <div className="relative w-[75%] lg:w-[75%]">
+      <div className="relative w-[100%] sm:w-[75%] lg:w-[75%]">
         {/* Video Player */}
         <div className="relative">
           <video
@@ -203,7 +203,7 @@ const VideoCarousel = (props) => {
         </div>
   
         {/* Navigation */}
-        <div className="flex justify-center mt-[6px] space-x-4">
+        <div className="flex justify-center mt-[6px] space-x-4 mb-2">
           {videos.map((video, index) => (
             <button
               key={video.id}

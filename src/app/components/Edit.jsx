@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Headings from './Headings';
+
 
 
 const Edit = () => {
@@ -51,7 +53,9 @@ const Edit = () => {
     <section className="py-12" data-section="The Edit">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl text-[var(--headings-color)] font-normal">The Edit</h2>
+       
+         
+          <Headings text="The Edit"></Headings>
         </div>
 
         {/* Container for horizontal scrolling */}
@@ -73,7 +77,7 @@ const Edit = () => {
           ))}
         </div>
       </div>
-      <div className='flex items-center justify-center mt-[2%]'><button className='border-[1px] border-[var(--headings-color)] text-[var(--headings-color)] px-[14%] py-[5%] sm:px-[4%] sm:py-[0.5%]'>Read More</button></div>
+      <div className='flex items-center justify-center mt-[2%]'><button className='border-[1px] border-[var(--headings-color)] text-[var(--headings-color)] px-[14%] py-[2%] sm:px-[4%] sm:py-[0.5%]'>Read More</button></div>
     </section>
   );
 };

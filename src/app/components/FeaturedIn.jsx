@@ -5,15 +5,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import Headings from './Headings';
 
 const FeaturedIn = () => {
   return (
     <div className="pt-10 pb-20 px-[20px] flex flex-col justify-center items-center"> {/* Center container */}
-       <h3 className='text-center text-2xl font-normal text-[var(--headings-color)] mb-12'>Featured In</h3>
+       <Headings text="Featured In"></Headings>
       <div className="w-full pl-[15%] flex justify-center items-center"> {/* Wrapper for centering Swiper */}
        
         <Swiper
-          className="w-[90%] sm:w-[80%] px-10" // Adjust width for responsiveness
+          className="w-[90%] sm:w-[80%] px-10 mt-5" // Adjust width for responsiveness
           centeredSlides={true}
           spaceBetween={0} // Space between slides
           slidesPerView={3} // Visible slides

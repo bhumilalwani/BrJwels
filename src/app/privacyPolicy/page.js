@@ -11,7 +11,7 @@ const page = () => {
       <div className="flex flex-col min-h-screen">
       <StaticNav />
       <DynamicNav />
-      <main className="flex flex-1">
+      <main className="flex flex-1 ">
         <SidebarNav />
         <div className="flex-1 overflow-auto">
           <TermsContent />
@@ -103,7 +103,7 @@ const SidebarNav = () => {
     ];
   
     return (
-      <div className="max-w-4xl pt-[20vh] py-6 lg:pt-[0vh] px-12 lg:px-6 ">
+      <div className="max-w-4xl sm:pt-[20%] py-6 xl:pt-[0vh] px-12 lg:px-6 ">
         <h1 className="text-[25px] font-normal tracking-wide text-[var(--terms-color)] mb-2">Privacy Policy</h1>
         <p className="text-sm text-gray-500 mb-8">Last updated on September 23, 2024</p>
         <div className="prose prose-gray max-w-none">

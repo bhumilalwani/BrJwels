@@ -15,13 +15,13 @@ const MostLoved = () => {
 
     const birthstones = [
         { name: 'Garnet', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Amethyst', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Aquamarine', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Diamond', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Emerald', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Pearl', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Ruby', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
-        { name: 'Peridot', image: 'https://assets.angara.com/ring/sr1912sd/5mm-aaa-blue-sapphire-white-gold-ring.jpg?width=256&quality=95' },
+        { name: 'Amethyst', image: 'https://assets.angara.com/earrings/lse0976d/6.4mm-fgvs-lab-grown-diamond-18k-white-gold-earrings.jpg?width=256&quality=95' },
+        { name: 'Aquamarine', image: 'https://assets.angara.com/pendant/sp1084aqd/6mm-aaaa-aquamarine-white-gold-pendant.jpg?width=256&quality=95' },
+        { name: 'Diamond', image: 'https://assets.angara.com/pendant/sp0448op/10x7mm-aaaa-opal-yellow-gold-pendant.jpg?width=256&quality=95' },
+        { name: 'Emerald', image: 'https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant.jpg?width=256&quality=95' },
+        { name: 'Pearl', image: 'https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant.jpg?width=256&quality=95' },
+        { name: 'Ruby', image: 'https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant.jpg?width=256&quality=95' },
+        { name: 'Peridot', image: 'https://assets.angara.com/pendant/sp0169s/7x5mm-aaa-blue-sapphire-white-gold-pendant.jpg?width=256&quality=95' },
     ];
 
     const numberToRemove = Math.floor(birthstones.length / 5); // 1/5th of the array length
@@ -68,12 +68,12 @@ const MostLoved = () => {
                         >
                             {slicedBirthstones.map((stone, index) => (
                                 <SwiperSlide key={index}>
-                                    <div className="relative group text-left hover:shadow-lg p-4">
-                                        <Link href="/productDetails/hsbcs" className="block">
+                                    <div className="relative group text-left hover:shadow-lg p-4 w-fit">
+                                        <Link href="/productDetails/hsbcs" className="block w-[70%] ml-4">
                                             <img
                                                 src={stone.image}
                                                 alt={stone.name}
-                                                className="w-full scale-75 h-auto object-cover mb-4 transition-transform duration-1000 transform hover:scale-100"
+                                                className="scale-75 mb-4 transition duration-1000 transform hover:scale-90"
                                             />
                                             <div className="absolute right-6 top-6">
                                                 <button
